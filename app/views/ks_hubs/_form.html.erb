@@ -1,0 +1,22 @@
+<%= form_with(model: ks_hub) do |form| %>
+  <% if ks_hub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ks_hub.errors.count, "error") %> prohibited this ks_hub from being saved:</h2>
+
+      <ul>
+        <% ks_hub.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

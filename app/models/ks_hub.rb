@@ -1,0 +1,2 @@
+class KsHub < ApplicationRecord
+end

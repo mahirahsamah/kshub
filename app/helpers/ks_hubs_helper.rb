@@ -1,0 +1,2 @@
+module KsHubsHelper
+end
