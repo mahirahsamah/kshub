@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_19_004501) do
+ActiveRecord::Schema.define(version: 2022_09_20_192451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "announcements", id: false, force: :cascade do |t|
+  create_table "announcements", force: :cascade do |t|
     t.integer "announcementID"
     t.text "text"
     t.bigint "User_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2022_09_19_004501) do
     t.index ["User_id"], name: "index_announcements_on_User_id"
   end
 
-  create_table "comments", id: false, force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.bigint "Announcement_id"
     t.bigint "User_id"
     t.integer "commentID"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_09_19_004501) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", id: false, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.integer "UIN"
     t.string "firstName"
     t.string "lastName"
