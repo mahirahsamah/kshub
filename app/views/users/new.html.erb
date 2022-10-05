@@ -1,5 +1,33 @@
-<h1>New User</h1>
+<p id="notice"><%= notice %></p>
 
-<%= render 'form', user: @user %>
+<h1>Register</h1>
 
-<%= link_to 'Back', users_path %>
+<form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="FirstName">First Name</label>
+  <input type="FirstName" id="FirstName" name="user[FirstName]" value="<%= @user.FirstName %>"/>
+
+  <label for="LastName">Last Name</label>
+  <input type="LastName" id="LastName" name="user[LastName]" value="<%= @user.LastName %>"/>
+
+  <label for="UIN">UIN</label>
+  <input type="UIN" id="UIN" name="user[UIN]" value="<%= @user.UIN %>"/>
+
+  <label for="Email">Email</label>
+  <input type="Email" id="Email" name="user[Email]" value="<%= @user.Email %>" />
+
+  <label for="PhoneNumber">Phone Number</label>
+  <input type="PhoneNumber" id="PhoneNumber" name="user[PhoneNumber]" value="<%= @user.PhoneNumber %>" />
+
+  <label for="PledgeClass">Pledge Class</label>
+  <input type="PledgeClass" id="PledgeClass" name="user[PledgeClass]" value="<%= @user.PledgeClass %>" />
+
+  <label for="Major">Major</label>
+  <input type="Major" id="Major" name="user[Major]" value="<%= @user.Major %>" />
+
+  <label for="Password">Password</label>
+  <input type="Password" id="Password" name="user[Password]" />
+
+  <input type="submit" value="Register">
+</form>
