@@ -1,6 +1,6 @@
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
-    create_table :users do  |t|
+    create_table :users, :primary_key => :UIN do  |t|
       t.integer :UIN
       t.string :firstName
       t.string :lastName
