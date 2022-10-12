@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Announcementid:</strong>
+  <%= @announcement.AnnouncementID %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @announcement.Text %>
+</p>
+
+<p>
+  <strong>Uin:</strong>
+  <%= @announcement.UIN %>
+</p>
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<%= link_to 'Back', announcements_path %>

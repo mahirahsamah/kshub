@@ -1,0 +1,62 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :UIN %>
+    <%= form.text_field :UIN %>
+  </div>
+
+  <div class="field">
+    <%= form.label :FirstName %>
+    <%= form.text_field :FirstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :LastName %>
+    <%= form.text_field :LastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PhoneNumber %>
+    <%= form.text_field :PhoneNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Email %>
+    <%= form.text_field :Email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isAdmin %>
+    <%= form.check_box :isAdmin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PledgeClass %>
+    <%= form.text_field :PledgeClass %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Major %>
+    <%= form.text_field :Major %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Password %>
+    <%= form.text_field :Password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
