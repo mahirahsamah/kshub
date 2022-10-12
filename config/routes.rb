@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  devise_for :users
   resources :events
   resources :comments
   resources :merch_links
@@ -7,12 +7,5 @@ Rails.application.routes.draw do
   resources :users
   resources :ks_hubs
   root 'ks_hubs#index'
-
-  #resources :posts
-  get '/register', to:'users#new'
-  resources :users, only: [:create]
-  get '/sign_in', to:'sessions#new'
-  get '/sign_out', to:'sessions#destroy'
-  resource :sessions, only: [:create]
-
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
