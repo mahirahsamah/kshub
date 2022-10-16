@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :trackable
+
+    #attr_accessible :Email, :FirstName, :Password, :Password_confirmation
+    #has_secure_password
+    
     has_many :Announcement
     has_many :MerchLink
     has_many :Event
     has_many :Comment
+
+    validates :Email, presence: :true, format: {with: /\A[^@\s]+@[^@\s]+\z/, message: "Error: Must be a valid email address."}
 end
