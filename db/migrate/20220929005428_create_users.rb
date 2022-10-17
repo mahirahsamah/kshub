@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :PledgeClass
       t.string :Major
       t.string :Password
+      t.string :Password_confirmation
 
       t.timestamps
     end
