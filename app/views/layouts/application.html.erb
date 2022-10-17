@@ -15,10 +15,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <% if user_signed_in? %>
+    <% if User.find_by(id: session[:user_id]) %>
 
     <% else %>
-      <a href="/users/sign_in">Sign in</a>
+      <a href="/sign_in">Sign in</a>
     <% end %>
     <%= yield %>
   </body>
