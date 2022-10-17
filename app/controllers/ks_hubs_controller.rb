@@ -4,7 +4,9 @@ class KsHubsController < ApplicationController
   # GET /ks_hubs or /ks_hubs.json
   def index
     @ks_hubs = KsHub.all
-    
+    if session[:user_id]
+      @user = User.find_by(id: session[:user_id])
+    end
   end
 
   # GET /ks_hubs/1 or /ks_hubs/1.json
