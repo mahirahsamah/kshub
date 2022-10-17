@@ -5,7 +5,7 @@ class KsHubsController < ApplicationController
   def index
     @ks_hubs = KsHub.all
     if session[:user_id]
-      @user = User.find(id: session[:user_id])
+      @user = User.find_by(id: session[:user_id])
     end
   end
 

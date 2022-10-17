@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_09_29_010544) do
     t.string "FirstName"
     t.string "LastName"
     t.string "PhoneNumber"
-    t.string "Email", null: false
+    t.string "Email"
     t.boolean "isAdmin"
     t.string "PledgeClass"
     t.string "Major"
