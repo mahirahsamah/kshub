@@ -1,0 +1,32 @@
+<%= form_with(model: merch_link) do |form| %>
+  <% if merch_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(merch_link.errors.count, "error") %> prohibited this merch_link from being saved:</h2>
+
+      <ul>
+        <% merch_link.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :LinkID %>
+    <%= form.text_field :LinkID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :LinkDescription %>
+    <%= form.text_area :LinkDescription %>
+  </div>
+
+  <div class="field">
+    <%= form.label :UIN %>
+    <%= form.text_field :UIN %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
