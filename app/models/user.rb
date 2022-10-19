@@ -9,5 +9,5 @@ class User < ApplicationRecord
     has_many :Comment
 
     validates :Email, presence: :true, format: {with: /\A[^@\s]+@[^@\s]+\z/, message: "Error: Must be a valid email address."}
-    validates :password, presence: :true, format: {with: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$, message: "Error: Must be a valid email address."}
+    #validates :password, presence: :true, format: {with: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$, message: "Error: Must be a valid email address."}
 end
