@@ -2,6 +2,10 @@
 
 <h1>Announcements</h1>
 
+<% if @user %>
+  Logged in as: <%= @user.FirstName %>
+<% end %>
+
 <table>
   <thead>
     <tr>

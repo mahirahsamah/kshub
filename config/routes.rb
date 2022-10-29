@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   delete "logout", to: "sessions#destroy"
 
-  
+  get "announcements", to: "announcements#new"
+
   root to: 'ks_hubs#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
