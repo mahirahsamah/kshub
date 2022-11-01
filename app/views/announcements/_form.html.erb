@@ -1,4 +1,4 @@
-<%= form_with(model: announcement) do |form| %>
+<%= form_with([@user, @user.announcements.build]) do |form| %>
   <% if announcement.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>

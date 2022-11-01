@@ -3,7 +3,7 @@ class User < ApplicationRecord
     #attr_accessible :Email, :FirstName, :Password, :Password_confirmation
     has_secure_password #:recovery_password
     
-    has_many :Announcement
+    has_many :announcements
     has_many :MerchLink
     has_many :Event
     has_many :Comment

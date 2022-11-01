@@ -20,18 +20,25 @@ class AnnouncementsController < ApplicationController
   end
 
   # POST /announcements or /announcements.json
-  def create
-    @announcement = Announcement.new(announcement_params)
+  # def create
+  #   @announcement = Announcement.new(announcement_params)
 
-    respond_to do |format|
-      if @announcement.save
-        format.html { redirect_to announcement_url(@announcement), notice: "Announcement was successfully created." }
-        format.json { render :show, status: :created, location: @announcement }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @announcement.errors, status: :unprocessable_entity }
-      end
-    end
+  #   respond_to do |format|
+  #     if @announcement.save
+  #       format.html { redirect_to announcement_url(@announcement), notice: "Announcement was successfully created." }
+  #       format.json { render :show, status: :created, location: @announcement }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @announcement.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+
+  def create
+    @user = User.find_by(id: session[:user_id])
+    @announcement = @user.announcement.create(params[:announcement]).permit(Current.user.id ,:AnnouncementID, :Text, :UIN)
+    redirect_to user_path(@user)
   end
 
   # PATCH/PUT /announcements/1 or /announcements/1.json
