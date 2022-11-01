@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :users
   resources :ks_hubs
 
+  get "profile", to: "profiles#edit", as: :edit_profile
+  patch "profile", to: "profiles#update"
+
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
