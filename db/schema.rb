@@ -10,39 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_29_010544) do
+ActiveRecord::Schema.define(version: 2022_11_02_231100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "announcements", force: :cascade do |t|
-    t.string "AnnouncementID"
-    t.text "Text"
-    t.string "UIN"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string "CommentID"
-    t.text "Text"
-    t.string "AnnouncementID"
-    t.string "UIN"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string "EventID"
-    t.string "UIN"
-    t.string "AnnouncementID"
-    t.datetime "EventDate"
-    t.string "EventLocation"
-    t.string "EventTitle"
-    t.string "EventOrganizer"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "ks_hubs", force: :cascade do |t|
     t.string "title"
@@ -50,26 +21,16 @@ ActiveRecord::Schema.define(version: 2022_09_29_010544) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "merch_links", force: :cascade do |t|
-    t.string "LinkID"
-    t.text "LinkDescription"
-    t.string "UIN"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "UIN", null: false
-    t.string "FirstName", null: false
-    t.string "LastName", null: false
-    t.string "PhoneNumber"
-    t.string "Email", null: false
-    t.boolean "isAdmin"
-    t.string "PledgeClass"
-    t.string "Major"
-    t.string "password_digest"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

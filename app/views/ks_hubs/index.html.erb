@@ -2,13 +2,8 @@
 
 <h1>Ks Hubs</h1>
 
-<% if @user %>
-  Logged in as: <%= @user.FirstName %>
-
-  <%= button_to "Logout", logout_path, method: :delete %>
-<% end %>
-
 <table>
+
   <tbody>
     <% @ks_hubs.each do |ks_hub| %>
       <tr>
