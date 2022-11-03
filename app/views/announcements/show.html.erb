@@ -11,7 +11,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @announcement.user_id %>
+  <%= @announcement.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_announcement_path(@announcement) %> |
