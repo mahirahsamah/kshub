@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :announcements
+  resources :announcements, :merch
   root to: 'pages#home'
   devise_for :users
   resources :ks_hubs
