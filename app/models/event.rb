@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-    belongs_to :User
-    belongs_to :Announcement
+    belongs_to :user
+    belongs_to :announcement
 
     validates :user, presence: true
 end

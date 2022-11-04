@@ -1,7 +1,7 @@
 class Announcement < ApplicationRecord
-    belongs_to :User
-    has_one :Event, through: :User
-    has_many :Comment, through: :User
+    belongs_to :user
+    has_one :event, through: :user
+    has_many :comment, through: :user
 
     validates :user, presence: true
 end

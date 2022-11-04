@@ -36,8 +36,10 @@ class AnnouncementsController < ApplicationController
 
 
   def create
-    @user = User.find_by(id: session[:user_id])
-    @announcement = @user.announcement.create(params[:announcement]).permit(Current.user.id ,:AnnouncementID, :Text, :UIN)
+    # @user = User.find_by(id: session[:user_id])
+		@user = User.find(params[:user_id])
+
+    @announcement = @user.announcement.create(params[:announcement]).permit(:AnnouncementID, :Text, :UIN)
     redirect_to user_path(@user)
   end
 

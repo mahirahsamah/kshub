@@ -5,7 +5,7 @@ class User < ApplicationRecord
     
     has_many :announcements
     has_many :MerchLink
-    has_many :Event
+    has_many :events
     has_many :Comment
 
     validates :Email, presence: :true, format: {with: /\A[^@\s]+@[^@\s]+\z/, message: "Error: Must be a valid email address."}
