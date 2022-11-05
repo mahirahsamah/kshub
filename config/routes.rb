@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
   resources :announcements
   root to: 'pages#home'
+  #root to: 'public#homepage'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
