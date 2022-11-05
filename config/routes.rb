@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   resources :ks_hubs
+  resources :profile_page
   #root 'ks_hubs#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
