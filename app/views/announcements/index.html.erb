@@ -1,6 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Announcements</h1>
+<h1 style="padding-left=20px">Announcements</h1>
+
+<div class="cardContainers">
+    <% @announcements.each do |announcement| %>
+        <div class="announcementCard">
+          <div class="announcementCardTitle">
+            <%= announcement.title %>
+          </div>
+
+          <div class="announcementCardBody">
+              <div class="announcementCardBody1">
+                  <div>
+                    <Strong>Description: </Strong>
+                          <%= announcement.title %>
+                  </div>
+
+              </div>
+
+              <div class="announcementCardBody1">
+                  <div>
+                    <Strong>Description: </Strong>
+                          <%= announcement.title %>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+
+
+    <% end %>
+
+</div>
+
+
 
 <table>
   <thead>
