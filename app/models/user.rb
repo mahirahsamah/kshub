@@ -15,4 +15,11 @@ class User < ApplicationRecord
       # user.skip_confirmation!
     end
   end
+
+  #def fullname_from_firstlast
+  #  if user.full_name.empty?
+  #    user.full_name = user.firstname + " " + user.lastname
+  #  end 
+  #end
+
 end

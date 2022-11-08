@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>Date and time of event:</strong>
   <%= @event.date %>
 </p>
 
@@ -27,7 +27,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @event.user_id %>
+  <%= @event.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
