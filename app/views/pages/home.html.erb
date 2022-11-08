@@ -1,2 +1,19 @@
-<h1>KSHub Home</h1>
+<h1>KS Hub</h1>
 
+<% if current_user %>
+
+<%= link_to 'Edit account', edit_user_registration_path %>
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+<%= link_to 'Announcements', announcements_path %>
+
+<% else %>
+
+<h2> Welcome to KS Hub by Kappa Sigma. Please sign up or sign in to continue.</h2>
+
+<%= link_to 'Sign up', new_user_registration_path %>
+
+<%= link_to 'Sign in', new_user_session_path %>
+
+<% end %>
