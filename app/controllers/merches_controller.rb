@@ -1,4 +1,4 @@
-class MerchController < ApplicationController
+class MerchesController < ApplicationController
     before_action :set_merch, only: %i[ show edit update destroy ]
     before_action :authenticate_user!, except: [:show, :index]
     def index
