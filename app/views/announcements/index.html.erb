@@ -19,10 +19,8 @@
         <td><%= announcement.body %></td>
         <td><%= announcement.user_id %></td>
         <td><%= link_to 'Show', announcement %></td>
-        <% if current_user && current_user.admin %>
-          <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-          <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
+        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,6 +28,4 @@
 
 <br>
 
-<% if current_user && current_user.admin %>
 <%= link_to 'New Announcement', new_announcement_path %>
-<% end %>

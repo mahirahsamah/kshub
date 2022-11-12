@@ -1,2 +1,0 @@
-class ProfilePageController < ApplicationController
-end
