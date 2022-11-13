@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :announcements, :merch
+  resources :announcements
   root to: 'pages#home'
   #root to: 'public#homepage'
   devise_for :users, controllers: {
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   }
   resources :ks_hubs
   resources :profile_page
+  resources :merches
   #root 'ks_hubs#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

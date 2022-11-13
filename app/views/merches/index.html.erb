@@ -16,13 +16,11 @@
         <% @merches.each do |merch| %>
             <tr>
                 <td><%= merch.name %></td>
-                <td><%= merch.body %></td>
+                <td><%= merch.price %></td>
                 <td><%= merch.link %></td>
                 <td><%= link_to 'Show', merch %></td>
-                <% if current_user && current_user.admin %>
-                    <td><%= link_to 'Edit', edit_merch_path(merch) %></td>
-                    <td><%= link_to 'Destroy', merch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
+                <td><%= link_to 'Edit', edit_merch_path(merch) %></td>
+                <td><%= link_to 'Destroy', merch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
         <% end %>
     </tbody>
