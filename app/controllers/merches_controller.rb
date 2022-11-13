@@ -44,7 +44,7 @@ class MerchesController < ApplicationController
         @merch.destroy
 
         respond_to do |format|
-            format.html { redirect_to merch_url, notice: "Merchandise was successfully destroyed." }
+            format.html { redirect_to merch_url(@merch), notice: "Merchandise was successfully destroyed." }
             format.json { head :no_content }
         end
     end

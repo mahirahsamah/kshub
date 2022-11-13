@@ -17,7 +17,7 @@
             <tr>
                 <td><%= merch.name %></td>
                 <td><%= merch.price %></td>
-                <td><%= merch.link %></td>
+                <td><%= link_to merch.link, merch.link %></td>
                 <td><%= link_to 'Show', merch %></td>
                 <td><%= link_to 'Edit', edit_merch_path(merch) %></td>
                 <td><%= link_to 'Destroy', merch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
