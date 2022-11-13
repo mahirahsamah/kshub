@@ -12,9 +12,9 @@
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/announcements", type: :request do
+RSpec.describe "/events", type: :request do
   
-  # Announcement. As you add validations to Announcement, be sure to
+  # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -26,58 +26,58 @@ RSpec.describe "/announcements", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Announcement.create! valid_attributes
-      get announcements_url
+      Event.create! valid_attributes
+      get events_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      announcement = Announcement.create! valid_attributes
-      get announcement_url(announcement)
+      event = Event.create! valid_attributes
+      get event_url(event)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_announcement_url
+      get new_event_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "render a successful response" do
-      announcement = Announcement.create! valid_attributes
-      get edit_announcement_url(announcement)
+      event = Event.create! valid_attributes
+      get edit_event_url(event)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Announcement" do
+      it "creates a new Event" do
         expect {
-          post announcements_url, params: { announcement: valid_attributes }
-        }.to change(Announcement, :count).by(1)
+          post events_url, params: { event: valid_attributes }
+        }.to change(Event, :count).by(1)
       end
 
-      it "redirects to the created announcement" do
-        post announcements_url, params: { announcement: valid_attributes }
-        expect(response).to redirect_to(announcement_url(Announcement.last))
+      it "redirects to the created event" do
+        post events_url, params: { event: valid_attributes }
+        expect(response).to redirect_to(event_url(Event.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Announcement" do
+      it "does not create a new Event" do
         expect {
-          post announcements_url, params: { announcement: invalid_attributes }
-        }.to change(Announcement, :count).by(0)
+          post events_url, params: { event: invalid_attributes }
+        }.to change(Event, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post announcements_url, params: { announcement: invalid_attributes }
+        post events_url, params: { event: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -89,42 +89,42 @@ RSpec.describe "/announcements", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested announcement" do
-        announcement = Announcement.create! valid_attributes
-        patch announcement_url(announcement), params: { announcement: new_attributes }
-        announcement.reload
+      it "updates the requested event" do
+        event = Event.create! valid_attributes
+        patch event_url(event), params: { event: new_attributes }
+        event.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the announcement" do
-        announcement = Announcement.create! valid_attributes
-        patch announcement_url(announcement), params: { announcement: new_attributes }
-        announcement.reload
-        expect(response).to redirect_to(announcement_url(announcement))
+      it "redirects to the event" do
+        event = Event.create! valid_attributes
+        patch event_url(event), params: { event: new_attributes }
+        event.reload
+        expect(response).to redirect_to(event_url(event))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        announcement = Announcement.create! valid_attributes
-        patch announcement_url(announcement), params: { announcement: invalid_attributes }
+        event = Event.create! valid_attributes
+        patch event_url(event), params: { event: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested announcement" do
-      announcement = Announcement.create! valid_attributes
+    it "destroys the requested event" do
+      event = Event.create! valid_attributes
       expect {
-        delete announcement_url(announcement)
-      }.to change(Announcement, :count).by(-1)
+        delete event_url(event)
+      }.to change(Event, :count).by(-1)
     end
 
-    it "redirects to the announcements list" do
-      announcement = Announcement.create! valid_attributes
-      delete announcement_url(announcement)
-      expect(response).to redirect_to(announcements_url)
+    it "redirects to the events list" do
+      event = Event.create! valid_attributes
+      delete event_url(event)
+      expect(response).to redirect_to(events_url)
     end
   end
 end
