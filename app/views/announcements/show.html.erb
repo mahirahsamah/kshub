@@ -14,5 +14,7 @@
   <%= @announcement.user.username %>
 </p>
 
+<% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<% end %>
 <%= link_to 'Back', announcements_path %>
