@@ -52,5 +52,9 @@ class User < ApplicationRecord
     result
   end
 
-
+  def self.update_active_status(user)
+    user.active = false
+    user.save
+    puts(user)
+  end
 end

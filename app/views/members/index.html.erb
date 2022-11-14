@@ -47,6 +47,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+      <% if user.active %>
         <td colspan="3"><%= user.uin %></td>
         <td colspan="3"><%= user.firstname %></td>
         <td colspan="3"><%= user.lastname %></td>
@@ -56,12 +57,13 @@
         <td colspan="3"><%= user.major %></td>
         <% if current_user && current_user.admin %>
           <% if current_user != user %>
-            <td><%= link_to 'Remove', members_delete_path_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Remove', User.update_active_status(user) %></td>
           <% end %>
           <% if current_user == user %>
             <td></td>
           <% end %>
         <% end %>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
