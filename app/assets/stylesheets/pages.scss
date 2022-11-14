@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// 
 .navbarStyles {
     background-color: #344734;
     height: 100px;
@@ -17,14 +18,13 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.017em;
-
 }
 
 .active {
     // background: #000;
     text-decoration: underline;
 }
-
+// 
 .cardContainers {
     margin: 0 auto;
 
@@ -61,6 +61,7 @@
 .announcementCardBody1 {
     width: 50%;
 }
+// 
 
 .KSTable {
     width: 90%;
@@ -80,5 +81,126 @@
     color: white;
 }
 
+// 
+.createButtonContainer{
+    display: flex;
+    justify-content: flex-end;
+    padding-right:40px;
+}
 
+
+.btn-outline-secondary {
+    color: #344734;
+    background-color: transparent;
+    background-image: none;
+    border-color: #344734
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #344734 !important;
+    border-color: 344734
+}
+
+.newMerchandise:hover {
+    color: #fff;
+    background-color: #344734 !important;
+    border-color: #344734
+}
+
+
+
+// 
+.createMerchPayButtonContainer{
+    display: flex;
+    justify-content: center;
+    width: 35vw;
+}
+
+
+.btn-outline-primary {
+    color: #913031;
+    background-color: transparent;
+    background-image: none;
+    border-color: #913031
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #913031 !important;
+    border-color: #913031
+}
+
+.newPayMerchandise:hover {
+    color: #fff;
+    background-color: #913031 !important;
+    border-color: #913031
+}
+// 
+.createMerchDelPayButtonContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin: 17px;
+}
+
+
+.btn-outline-success {
+    color: #913031;
+    background-color: #fff;
+    background-image: none;
+    border-color: #fff;
+    height: 40px;
+    padding: 0;
+    margin:2px
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #913031 !important;
+    border-color: #913031
+}
+
+.newPayMerchandise:hover {
+    color: #fff;
+    background-color: #913031 !important;
+    border-color: #913031
+}
+// 
+
+.merchCardContainers {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    margin: 30px;
+    justify-content: center;
+
+}
+
+
+.merchCard {
+    background-color: #D9D9D9;
+    height: 200px;
+    width: 41%;
+    margin: 15px 30px 15px 30px;
+
+}
+
+.merchCardTitle {
+    background-color: #913031;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Cormorant Infant';
+    font-style: normal;
+    font-weight: 400;
+    height: 60px;
+    font-size: 25px;
+}
+
+.merchCardBody {
+    padding: 25px;
+    display: flex;
+}
+// 
 
