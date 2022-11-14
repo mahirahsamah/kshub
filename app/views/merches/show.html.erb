@@ -1,0 +1,20 @@
+
+<p>
+<strong>Product:</strong>
+<%= @merch.name %>
+</p>
+
+<p>
+<strong>Price:</strong>
+<%= @merch.price %>
+</p>
+
+<p>
+<strong>Link:</strong>
+<%= @merch.link %>
+</p>
+
+<% if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_merch_path(@merch) %> |
+<% end %>
+<%= link_to 'Back', merches_path %>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :profile_page
   resources :members
   resources :profile
+  resources :merches
 
   put 'profile_page' => 'profile_page#edit', :as => 'profile_page_update_path'
   get 'members' => 'members#index', :as => 'members_path'
