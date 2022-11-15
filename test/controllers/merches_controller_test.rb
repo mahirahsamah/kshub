@@ -1,3 +1,5 @@
+require "test_helper"
+
 class MerchesControllerTest < ActionDispatch::IntegrationTest
     setup do
         sign_in users(:mahirah)
@@ -12,8 +14,8 @@ class MerchesControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
     end
 
-    test "can edit merch" do
-        get edit_merch_url
+    test "can get create merch" do
+        get new_merch_url
         assert_response :success
     end
 end
