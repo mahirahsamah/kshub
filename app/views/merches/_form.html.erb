@@ -10,24 +10,43 @@
         </ul>
       </div>
     <% end %>
-  
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :price %>
-      <%= form.number_field :price %>
-    </div>
 
-    <div class="field">
-      <%= form.label :link %>
-      <%= form.text_area :link %>
-    </div>
+
+<%# background-color:#E7D1B5; %>
+  <div class="card" style="border-color:#913031; margin:20vh; margin-top:50px;">
+  <div class="card-body">
   
-    <div class="actions">
-      <%= form.submit %>
+      <div class="field mb-3">
+        <%= form.label :name, { class: "form-label"} %>
+        <%= form.text_field :name, { class: "form-control", placeholder: "Name" }  %>
+      </div>
+    
+      <div class="field mb-3">
+        <%= form.label :price, { class: "form-label"} %>
+        <%= form.number_field :price, { class: "form-control", placeholder: "Price" }  %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :link, { class: "form-label"} %>
+        <%= form.text_area :link, { class: "form-control", placeholder: "Link" }  %>
+      </div>
+    
+      <div class="actions">
+        <div style="display:flex;">
+          <div style="width:33%; margin-left: 0vw"> 
+                                <%= link_to 'Back', merches_path, class: "btn btn-outline-secondary newMerchandise"  %>
+          </div>
+          <div style="width:33%; justify-content:center; display:flex"> 
+            <%= form.submit "Submit", class: "btn btn-outline-secondary newMerchandise"  %>
+          </div>
+          <div style="width:33%"> </div>
+
+
+        </div>
+
+      </div>
+
     </div>
+</div>
   <% end %>
   
