@@ -15,4 +15,42 @@ class User < ApplicationRecord
       # user.skip_confirmation!
     end
   end
+
+  #def fullname_from_firstlast
+  #  if user.full_name.empty?
+  #    user.full_name = user.firstname + " " + user.lastname
+  #  end 
+  #end
+
+  def update_with_password(params, *options)
+    if options.present?
+      ActiveSupport::Deprecation.warn <<-DEPRECATION.strip_heredoc
+        [Devise] The second argument of `DatabaseAuthenticatable#update_with_password`
+        (`options`) is deprecated and it will be removed in the next major version.
+        It was added to support a feature deprecated in Rails 4, so you can safely remove it
+        from your code.
+      DEPRECATION
+    end
+
+    current_password = params.delete(:current_password)
+
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+
+    result = if valid_password?(current_password)
+      update(params, *options)
+    else
+      assign_attributes(params, *options)
+      valid?
+      errors.add(:current_password, current_password.blank? ? :blank : :invalid)
+      false
+    end
+
+    clean_up_passwords
+    result
+  end
+
+
 end
