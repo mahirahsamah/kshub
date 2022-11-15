@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Announcementid:</strong>
-  <%= @announcement.AnnouncementID %>
+  <strong>Title:</strong>
+  <%= @announcement.title %>
 </p>
 
 <p>
-  <strong>Text:</strong>
-  <%= @announcement.Text %>
+  <strong>Body:</strong>
+  <%= @announcement.body %>
 </p>
 
 <p>
-  <strong>Uin:</strong>
-  <%= @announcement.UIN %>
+  <strong>User:</strong>
+  <%= @announcement.user.username %>
 </p>
 
+<% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<% end %>
 <%= link_to 'Back', announcements_path %>

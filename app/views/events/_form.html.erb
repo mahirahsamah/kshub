@@ -12,38 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :EventID %>
-    <%= form.text_field :EventID %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :UIN %>
-    <%= form.text_field :UIN %>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
   </div>
 
   <div class="field">
-    <%= form.label :AnnouncementID %>
-    <%= form.text_field :AnnouncementID %>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
   </div>
 
   <div class="field">
-    <%= form.label :EventDate %>
-    <%= form.datetime_select :EventDate %>
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
   </div>
 
   <div class="field">
-    <%= form.label :EventLocation %>
-    <%= form.text_field :EventLocation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :EventTitle %>
-    <%= form.text_field :EventTitle %>
-  </div>
-
-  <div class="field">
-    <%= form.label :EventOrganizer %>
-    <%= form.text_field :EventOrganizer %>
+    <%= form.label :organizer %>
+    <%= form.text_field :organizer %>
   </div>
 
   <div class="actions">

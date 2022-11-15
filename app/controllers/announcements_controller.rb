@@ -1,6 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /announcements or /announcements.json
   def index
     @announcements = Announcement.all
@@ -22,7 +22,7 @@ class AnnouncementsController < ApplicationController
   # POST /announcements or /announcements.json
   def create
     @announcement = Announcement.new(announcement_params)
-
+    @announcement.user = current_user
     respond_to do |format|
       if @announcement.save
         format.html { redirect_to announcement_url(@announcement), notice: "Announcement was successfully created." }
@@ -65,6 +65,6 @@ class AnnouncementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def announcement_params
-      params.require(:announcement).permit(:AnnouncementID, :Text, :UIN)
+      params.require(:announcement).permit(:title, :body)
     end
 end

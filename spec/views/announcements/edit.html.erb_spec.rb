@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "announcements/edit", type: :view do
   before(:each) do
     @announcement = assign(:announcement, Announcement.create!(
-      AnnouncementID: "MyString",
-      Text: "MyText",
-      UIN: "MyString"
+      title: "MyString",
+      body: "MyText",
+      user: nil
     ))
   end
 
@@ -14,11 +14,11 @@ RSpec.describe "announcements/edit", type: :view do
 
     assert_select "form[action=?][method=?]", announcement_path(@announcement), "post" do
 
-      assert_select "input[name=?]", "announcement[AnnouncementID]"
+      assert_select "input[name=?]", "announcement[title]"
 
-      assert_select "textarea[name=?]", "announcement[Text]"
+      assert_select "textarea[name=?]", "announcement[body]"
 
-      assert_select "input[name=?]", "announcement[UIN]"
+      assert_select "input[name=?]", "announcement[user_id]"
     end
   end
 end

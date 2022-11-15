@@ -1,13 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Announcements</h1>
+<h1 style="padding-left=20px">Announcements</h1>
+
+<div class="cardContainers">
+    <% @announcements.each do |announcement| %>
+        <div class="announcementCard">
+          <div class="announcementCardTitle">
+            <%= announcement.title %>
+          </div>
+
+          <div class="announcementCardBody">
+              <div class="announcementCardBody1">
+                  <div>
+                    <Strong>Description: </Strong>
+                          <%= announcement.title %>
+                  </div>
+
+              </div>
+
+              <div class="announcementCardBody1">
+                  <div>
+                    <Strong>Description: </Strong>
+                          <%= announcement.title %>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+
+
+    <% end %>
+
+</div>
+
+
 
 <table>
   <thead>
     <tr>
-      <th>Announcementid</th>
-      <th>Text</th>
-      <th>Uin</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +49,14 @@
   <tbody>
     <% @announcements.each do |announcement| %>
       <tr>
-        <td><%= announcement.AnnouncementID %></td>
-        <td><%= announcement.Text %></td>
-        <td><%= announcement.UIN %></td>
+        <td><%= announcement.title %></td>
+        <td><%= announcement.body %></td>
+        <td><%= announcement.user_id %></td>
         <td><%= link_to 'Show', announcement %></td>
-        <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user && current_user.admin %>
+          <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
+          <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +64,6 @@
 
 <br>
 
+<% if current_user && current_user.admin %>
 <%= link_to 'New Announcement', new_announcement_path %>
+<% end %>

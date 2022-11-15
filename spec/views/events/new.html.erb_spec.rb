@@ -3,12 +3,11 @@ require 'rails_helper'
 RSpec.describe "events/new", type: :view do
   before(:each) do
     assign(:event, Event.new(
-      EventID: "MyString",
-      UIN: "MyString",
-      AnnouncementID: "MyString",
-      EventLocation: "MyString",
-      EventTitle: "MyString",
-      EventOrganizer: "MyString"
+      title: "MyString",
+      body: "MyText",
+      location: "MyString",
+      organizer: "MyString",
+      user: nil
     ))
   end
 
@@ -17,17 +16,15 @@ RSpec.describe "events/new", type: :view do
 
     assert_select "form[action=?][method=?]", events_path, "post" do
 
-      assert_select "input[name=?]", "event[EventID]"
+      assert_select "input[name=?]", "event[title]"
 
-      assert_select "input[name=?]", "event[UIN]"
+      assert_select "textarea[name=?]", "event[body]"
 
-      assert_select "input[name=?]", "event[AnnouncementID]"
+      assert_select "input[name=?]", "event[location]"
 
-      assert_select "input[name=?]", "event[EventLocation]"
+      assert_select "input[name=?]", "event[organizer]"
 
-      assert_select "input[name=?]", "event[EventTitle]"
-
-      assert_select "input[name=?]", "event[EventOrganizer]"
+      assert_select "input[name=?]", "event[user_id]"
     end
   end
 end
