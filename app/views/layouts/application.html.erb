@@ -12,7 +12,7 @@
 
   <body style="background-color:#E7D1B5;">
       
-  <% unless controller_name == "pages" %>
+  <% unless controller_name == "pages" or controller_name == "registrations" or controller_name == "sessions" or controller_name == "omniauth_callbacks" %>
     <nav class="navbar navbar-expand-md navbar-dark navbarStyles">
       <a class="navbar-brand" href="#">KSHub</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
