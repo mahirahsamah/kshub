@@ -35,6 +35,12 @@
   <%= link_to 'Edit', edit_user_registration_path(@user) %>
 </button>
 
+<% if current_user && current_user.admin %>
+  <button class="btn" type="button">
+    <%= link_to 'Admin Dashboard', admin_root_path %>
+  </button>
+<% end %>
+
 <table>
   <tbody>
     <tr>
