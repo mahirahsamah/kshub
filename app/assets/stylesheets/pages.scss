@@ -3,11 +3,29 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 // E7D1B5
 // 
+
+h2 {
+    margin-left: 40px;
+    margin-top: 40px
+}
+
+.signupPageButton{
+    width:300px !important
+}
+.field {
+    margin: 4px;
+}
+.width50{
+    width: 50%;
+}
+
+
 .navbarStyles {
     background-color: #344734;
     height: 100px;
     padding: 25px
 }
+
 
 .nav-link {
     font-family: 'Inter';
@@ -24,6 +42,7 @@
     // background: #000;
     text-decoration: underline;
 }
+
 // 
 .cardContainers {
     margin: 0 auto;
@@ -61,6 +80,7 @@
 .announcementCardBody1 {
     width: 50%;
 }
+
 // 
 
 .KSTable {
@@ -82,10 +102,10 @@
 }
 
 // 
-.createButtonContainer{
+.createButtonContainer {
     display: flex;
     justify-content: flex-end;
-    padding-right:40px;
+    padding-right: 40px;
 }
 
 
@@ -111,7 +131,7 @@
 
 
 // 
-.createMerchPayButtonContainer{
+.createMerchPayButtonContainer {
     display: flex;
     justify-content: center;
     width: 35vw;
@@ -136,8 +156,9 @@
     background-color: #913031 !important;
     border-color: #913031
 }
+
 // 
-.createMerchDelPayButtonContainer{
+.createMerchDelPayButtonContainer {
     display: flex;
     justify-content: flex-end;
     margin: 17px;
@@ -151,7 +172,7 @@
     border-color: #fff;
     height: 40px;
     padding: 0;
-    margin:2px
+    margin: 2px
 }
 
 .btn-outline-success:hover {
@@ -165,6 +186,7 @@
     background-color: #913031 !important;
     border-color: #913031
 }
+
 // 
 
 .merchCardContainers {
@@ -202,5 +224,5 @@
     padding: 25px;
     display: flex;
 }
-// 
 
+// 
