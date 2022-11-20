@@ -357,6 +357,7 @@ DEPENDENCIES
   rexml
   rspec-rails
   sass-rails (>= 6)
+  sassc-rails
   selenium-webdriver
   simplecov
   spring
