@@ -1,5 +1,10 @@
 <h1 style="margin-left:40px; margin-top:40px;">New Announcement</h1>
 
+<% if params[:event_id] %>
+<p> event exists </p>
 <%= render 'form', announcement: @announcement %>
+<% else %>
+<%= render 'form', announcement: @announcement %>
+<% end %>
 
 <%= link_to 'Back', announcements_path %>

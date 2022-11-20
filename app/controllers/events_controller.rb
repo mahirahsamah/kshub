@@ -24,7 +24,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     respond_to do |format|
-      if @event.save
+      if @event.save and @event.ann == true
+        format.html { redirect_to new_announcement_path(event_id: @event.id), notice: "Create an Announcement for this Event." }
+        #format.json { render :show, status: :created, location: @event }
+      elsif @event.save and @event.ann == false
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
@@ -33,6 +36,10 @@ class EventsController < ApplicationController
       end
     end
   end
+
+  #if @event.ann == true
+    #flash[:success] = "The Event and Announcement was successfully created."
+    #redirect_to new_announcement_path(ann: @event.ann)
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
@@ -57,6 +64,15 @@ class EventsController < ApplicationController
     end
   end
 
+  # check if event check box is true or false, if true send to announcement
+  #def send_to_announcement
+  #  if @event.ann == true
+  #    @make_event_announcement = true
+  #  else
+  #    @make_event_announcement = false
+  #  end
+  #end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -65,6 +81,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body, :location, :date, :organizer, :ann)
+      params.require(:event).permit(:title, :body, :location, :date, :organizer, :ann, :make_event_announcement)
     end
 end

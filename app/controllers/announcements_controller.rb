@@ -13,6 +13,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new
   def new
     @announcement = Announcement.new
+    #@event = Event.find(params[:event_id])
   end
 
   # GET /announcements/1/edit
@@ -56,6 +57,11 @@ class AnnouncementsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # see if "make announcement" check box is true or false from events
+  #def check_event_announcement
+    #@make_event_announcement = params[:make_event_announcement]
+  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.
