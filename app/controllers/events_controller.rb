@@ -64,6 +64,10 @@ class EventsController < ApplicationController
     end
   end
 
+  # send info from new event form to announcement form
+  def send_data
+    
+  end
   # check if event check box is true or false, if true send to announcement
   #def send_to_announcement
   #  if @event.ann == true
