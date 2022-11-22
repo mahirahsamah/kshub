@@ -13,6 +13,11 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @etitle = params[:title]
+    @ebody = params[:body]
+    @elocation = params[:location]
+    @edate = params[:date]
+    @eorganizer = params[:organizer]
   end
 
   # GET /events/1/edit
@@ -65,17 +70,13 @@ class EventsController < ApplicationController
   end
 
   # send info from new event form to announcement form
-  def send_data
-    
+  def capture_form_data
+    @etitle = params[:title]
+    @ebody = params[:body]
+    @elocation = params[:location]
+    @edate = params[:date]
+    @eorganizer = params[:organizer]
   end
-  # check if event check box is true or false, if true send to announcement
-  #def send_to_announcement
-  #  if @event.ann == true
-  #    @make_event_announcement = true
-  #  else
-  #    @make_event_announcement = false
-  #  end
-  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.
