@@ -8,16 +8,17 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @event = Event.find(params[:id])
+    @etitle = @event.title
+    @ebody = @event.body
+    @elocation = @event.location
+    @edate = @event.date
+    @eorganizer = @event.organizer
   end
 
   # GET /events/new
   def new
     @event = Event.new
-    @etitle = params[:title]
-    @ebody = params[:body]
-    @elocation = params[:location]
-    @edate = params[:date]
-    @eorganizer = params[:organizer]
   end
 
   # GET /events/1/edit
@@ -40,6 +41,9 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
+    
+
   end
 
   #if @event.ann == true
@@ -71,12 +75,12 @@ class EventsController < ApplicationController
 
   # send info from new event form to announcement form
   def capture_form_data
-    @etitle = params[:title]
-    @ebody = params[:body]
-    @elocation = params[:location]
-    @edate = params[:date]
-    @eorganizer = params[:organizer]
+    @event = Event.find(params[:id])
+    
   end
+
+  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -12,17 +12,16 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :title, value: @etitle %>
-  <%= form.hidden_field :body, value: @ebody %>
-
+  <p>here</p>
+  <%= @etitle %>
   <h1> Does the Announcement for this Event look OK? </h1>
   <div class="card" style="border-color:#913031; margin:20vh; margin-top:50px;">
   <div class="card-body">
   
-
+  
   <div class="field">
     <%= form.label :title, { class: "form-label"} %>
-    <%= form.text_field :title, :value => @etitle, class: "form-control"   %>
+    <%= form.text_field :title, :value => params[:etitle], class: "form-control"   %>
   </div>
 
   <div class="field">
