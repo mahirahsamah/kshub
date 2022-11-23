@@ -13,12 +13,14 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new
   def new
     @announcement = Announcement.new
-    @event = Event.find(params[:event_id])
-    @etitle = @event.title
-    @ebody = @event.body
-    @elocation = @event.location
-    @edate = @event.date
-    @eorganizer = @event.organizer
+    if params[:event_id]
+      @event = Event.find(params[:event_id])
+      @etitle = @event.title
+      @ebody = @event.body
+      @elocation = @event.location
+      @edate = @event.date
+      @eorganizer = @event.organizer
+    end
   end
 
   # GET /announcements/1/edit
