@@ -33,6 +33,8 @@ class AnnouncementsController < ApplicationController
     @announcement.user = current_user
     respond_to do |format|
       if @announcement.save
+        # to send email every time announemenet is created
+        AnnMailer.with(user: current_user, announcement: @announcement).ann_created.deliver_later
         format.html { redirect_to announcement_url(@announcement), notice: "Announcement was successfully created." }
         format.json { render :show, status: :created, location: @announcement }
       else
