@@ -1,9 +1,23 @@
-<h2>Sign up</h2>
+<nav class="navbar navbar-expand-md navbar-dark navbarStyles">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarColor01" >
+    <ul class="navbar-nav mr-auto" style="width:87%; justify-content:right;">
+      <li class="nav-item">
+        <%= link_to root_path do %>
+          <%= image_tag "kslogo.png", class: 'signuplogin-nav-img' %>
+        <% end %>
+      </li>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+      <li class="nav-item">
+      </li>
 
+  </div>
+</nav>
+
+<h2 class = "signup" >Sign up</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -19,12 +33,12 @@
   
   <div style="display:flex">
   <div class="field width50">
-    <%= f.label :firstname, { class: "form-label"}  %><br />
+    <%= f.label :firstname, 'First Name', { class: "form-label"}  %><br />
     <%= f.text_field :firstname,  { class: "form-control", placeholder: "John", autofocus: true, autocomplete: "firstname" }  %>
   </div>
 
   <div class="field width50">
-    <%= f.label :lastname, { class: "form-label"}  %><br />
+    <%= f.label :lastname, 'Last Name', { class: "form-label"}  %><br />
     <%= f.text_field :lastname, { class: "form-control", placeholder: "Doe", autofocus: true, autocomplete: "lastname" }%>
   </div>
   </div>
@@ -32,7 +46,7 @@
 
 
   <div class="field">
-    <%= f.label :uin, { class: "form-label"}  %><br />
+    <%= f.label :uin, 'UIN', { class: "form-label"}  %><br />
     <%= f.text_field :uin,{ class: "form-control", placeholder: "123456789", autofocus: true, autocomplete: "uin" } %>
   </div>
 
@@ -41,12 +55,12 @@
   <div style="display:flex">
 
   <div class="field width50">
-    <%= f.label :username, { class: "form-label"}  %><br />
+    <%= f.label :username, 'Username', { class: "form-label"}  %><br />
     <%= f.text_field :username, { class: "form-control", placeholder: "john_doe", autofocus: true, autocomplete: "username" }%>
   </div>
 
   <div class="field width50">
-    <%= f.label :phonenumber, { class: "form-label"}  %><br />
+    <%= f.label :phonenumber, 'Phone Number', { class: "form-label"}  %><br />
     <%= f.text_field :phonenumber, { class: "form-control", placeholder: "4445556666", autofocus: true, autocomplete: "phonenumber" }%>
   </div>
   </div>
@@ -54,12 +68,12 @@
   <div style="display:flex">
 
   <div class="field width50">
-    <%= f.label :major, { class: "form-label"}  %><br />
+    <%= f.label :major, 'Major', { class: "form-label"}  %><br />
     <%= f.text_field :major,{ class: "form-control", placeholder: "Major", autofocus: true, autocomplete: "major" }%>
   </div>
 
   <div class="field width50">
-    <%= f.label :pledgeclass, { class: "form-label"}  %><br />
+    <%= f.label :pledgeclass, 'Pledge Class', { class: "form-label"}  %><br />
     <%= f.text_field :pledgeclass, { class: "form-control", placeholder: "Pledge Class", autofocus: true, autocomplete: "pledgeclass" } %>
   </div>
     </div>
@@ -76,7 +90,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, { class: "form-label"}  %><br />
+    <%= f.label :password_confirmation,'Confirm Password', { class: "form-label"}  %><br />
     <%= f.password_field :password_confirmation, { class: "form-control", autocomplete: "new-password"}%>
   </div>
 
