@@ -27,7 +27,7 @@
   touch-action: manipulation;
   
   position:relative;
-  top: 140px;
+  top: 50px;
   left: 41%;
   margin-right: 50px;
 }
@@ -39,25 +39,25 @@
 h2 {
   text-align:center;
   position:relative;
-  top: 100px;
+  top: 5px;
 }
 
 h4 {
   text-align:center;
   position:relative;
-  top: 120px;
+  top: 20px;
 }
 
 .style-image {
-  position: relative;
-  top: 50px;
-  left: 42%;
-  text-align: center;
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 5%;
 }
 
 .nav-img{
   position: relative;
-  right: 353%;
+  right: 350%;
   top: -4px;
   width: 40%;
   height: auto;
@@ -74,7 +74,7 @@ h4 {
   display: flex;
   position: relative;
   left: 180%;
-  top: 22px;
+  top: 25px;
   letter-spacing: -0.017em;
-  margin-right: 40px;
+  margin-right: 45px;
 }
