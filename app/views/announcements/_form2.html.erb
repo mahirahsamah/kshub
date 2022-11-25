@@ -12,22 +12,21 @@
     </div>
   <% end %>
 
-
-
-
+  <h1> Does the Announcement for this Event look OK? </h1>
   <div class="card" style="border-color:#913031; margin:20vh; margin-top:50px;">
   <div class="card-body">
   
-
+  
   <div class="field">
     <%= form.label :title, { class: "form-label"} %>
-    <%= form.text_field :title, { class: "form-control", placeholder: "Title" }   %>
+    <%= form.text_field :title, :value => "EVENT: #{@etitle}", class: "form-control"   %>
   </div>
 
   <div class="field">
     <%= form.label :body, { class: "form-label"} %>
-    <%= form.text_area :body,  { class: "form-control", placeholder: "Body" }   %>
+    <%= form.text_area :body, :value => "#{@ebody} \nLocation: #{@elocation} \nDate and time: #{@edate} \nOrganizer: #{@eorganizer}", class: "form-control" %>
   </div>
+
 
       <div class="actions" style="margin-top:20px">
         <div style="display:flex;">

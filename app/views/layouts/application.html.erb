@@ -22,7 +22,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarColor01" >
-        <ul class="navbar-nav mr-auto" style="width:87%; justify-content:center;">
+        <ul class="navbar-nav mr-auto" style="width:87%; justify-content:center; align-items:center">
           <li class="nav-item">
           <%= link_to announcements_path do %>
             <%= image_tag "kslogo.png", class: 'nav-img' %>
@@ -77,6 +77,8 @@
 
       </div>
     </nav>
+
+    
 
     <% if controller_name == 'pages' and !user_signed_in? %>
 

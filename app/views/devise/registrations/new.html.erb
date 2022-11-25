@@ -1,11 +1,11 @@
 <h2>Sign up</h2>
 
 
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-
 
   <div class="card shadow p-3 bg-white rounded " style=" margin:20px 43vh; margin-bottom:10px">
   <div class="card-body">
@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :email, { class: "form-label"} %><br />
-    <%= f.email_field :email, { class: "form-control", placeholder: "email", autofocus: true, autocomplete: "email" } %>
+    <%= f.email_field :email, { class: "form-control", placeholder: "student@tamu.edu", autofocus: true, autocomplete: "email" } %>
   </div>
 
   
   <div style="display:flex">
   <div class="field width50">
     <%= f.label :firstname, { class: "form-label"}  %><br />
-    <%= f.text_field :firstname,  { class: "form-control", placeholder: "firstname", autofocus: true, autocomplete: "firstname" }  %>
+    <%= f.text_field :firstname,  { class: "form-control", placeholder: "John", autofocus: true, autocomplete: "firstname" }  %>
   </div>
 
   <div class="field width50">
     <%= f.label :lastname, { class: "form-label"}  %><br />
-    <%= f.text_field :lastname, { class: "form-control", placeholder: "lastname", autofocus: true, autocomplete: "lastname" }%>
+    <%= f.text_field :lastname, { class: "form-control", placeholder: "Doe", autofocus: true, autocomplete: "lastname" }%>
   </div>
   </div>
 
@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= f.label :uin, { class: "form-label"}  %><br />
-    <%= f.text_field :uin,{ class: "form-control", placeholder: "uin", autofocus: true, autocomplete: "uin" } %>
+    <%= f.text_field :uin,{ class: "form-control", placeholder: "123456789", autofocus: true, autocomplete: "uin" } %>
   </div>
 
 
@@ -42,12 +42,12 @@
 
   <div class="field width50">
     <%= f.label :username, { class: "form-label"}  %><br />
-    <%= f.text_field :username, { class: "form-control", placeholder: "username", autofocus: true, autocomplete: "username" }%>
+    <%= f.text_field :username, { class: "form-control", placeholder: "john_doe", autofocus: true, autocomplete: "username" }%>
   </div>
 
   <div class="field width50">
     <%= f.label :phonenumber, { class: "form-label"}  %><br />
-    <%= f.text_field :phonenumber, { class: "form-control", placeholder: "phonenumber", autofocus: true, autocomplete: "phonenumber" }%>
+    <%= f.text_field :phonenumber, { class: "form-control", placeholder: "4445556666", autofocus: true, autocomplete: "phonenumber" }%>
   </div>
   </div>
 
@@ -55,12 +55,12 @@
 
   <div class="field width50">
     <%= f.label :major, { class: "form-label"}  %><br />
-    <%= f.text_field :major,{ class: "form-control", placeholder: "major", autofocus: true, autocomplete: "major" }%>
+    <%= f.text_field :major,{ class: "form-control", placeholder: "Major", autofocus: true, autocomplete: "major" }%>
   </div>
 
   <div class="field width50">
     <%= f.label :pledgeclass, { class: "form-label"}  %><br />
-    <%= f.text_field :pledgeclass, { class: "form-control", placeholder: "pledgeclass", autofocus: true, autocomplete: "pledgeclass" } %>
+    <%= f.text_field :pledgeclass, { class: "form-control", placeholder: "Pledge Class", autofocus: true, autocomplete: "pledgeclass" } %>
   </div>
     </div>
 
