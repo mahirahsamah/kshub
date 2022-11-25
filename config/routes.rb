@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'members' => 'members#index', :as => 'members_path'
 
-  #root 'ks_hubs#index'
+  # Added route for updating the status of a member to inactive
+  get 'members/remove/:id' => 'members#set_active_status', :as => 'members_remove'
+
   # or details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
