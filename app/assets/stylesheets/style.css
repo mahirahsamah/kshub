@@ -27,7 +27,7 @@
   touch-action: manipulation;
   
   position:relative;
-  top: 140px;
+  top: 50px;
   left: 41%;
   margin-right: 50px;
 }
@@ -39,26 +39,26 @@
 h2 {
   text-align:center;
   position:relative;
-  top: 100px;
+  top: 5px;
 }
 
 h4 {
   text-align:center;
   position:relative;
-  top: 120px;
+  top: 20px;
 }
 
 .style-image {
-  position: relative;
-  top: 50px;
-  left: 42%;
-  text-align: center;
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 5%;
 }
 
 .nav-img{
   position: relative;
-  right: 353%;
-  top: -4px;
+  right: 350%;
+  top: -3px;
   width: 40%;
   height: auto;
 }
@@ -74,7 +74,164 @@ h4 {
   display: flex;
   position: relative;
   left: 180%;
-  top: 22px;
+  top: 25px;
   letter-spacing: -0.017em;
-  margin-right: 40px;
+  margin-right: 45px;
+}
+
+.signuplogin-nav-img{
+  position: relative;
+  right: 1035px;
+  top: -3px;
+  width: 40%;
+  height: auto; 
+}
+
+.signup{
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.login-nav-img{
+  position: relative;
+  right: 1050px;
+  top: -3px;
+  width: 40%;
+  height: auto;
+}
+
+.login-btns{
+  color: #344734;
+  background-color: transparent;
+  background-image: none;
+  border-color: #344734;
+  width:300px !important
+}
+.login-btns:hover {
+  color: #fff;
+  background-color: #344734 !important;
+  border-color: 344734;
+}
+
+.signup-btn {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.signup-btn:hover {
+  background-color: #f7fafa;
+}
+
+.signup-btn:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.loggedin-nav{
+  position: relative;
+  right: 314px;
+  top: -3px;
+  width: 40%;
+  height: auto;
+}
+
+.signout-nav-link {
+  position: relative;
+  left: 180%;
+  top: 17px;
+}
+
+.profile-nav-link{
+  position: relative;
+  left: 149%;
+  top: 17px;
+}
+
+.one {
+  position: relative;
+  top: 17px; 
+  right: 85px;
+}
+
+.flash-message-wrapper{
+  width: 630px;
+  text-align: center;
+  position:fixed; 
+  top: 0px;  
+  left: 29%;
+  z-index:9999; 
+  border-radius:0px;
+
+  -webkit-animation: seconds 1.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 7s;
+  animation: seconds 1.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 5s;
+}
+@keyframes seconds{
+  0%{
+    opacity: 1;
+  }
+  10%{
+    opacity: 0.9;
+  }
+  20%{
+    opacity: 0.8;
+
+  }
+  30%{
+    opacity: 0.7;
+
+  }
+  40%{
+    opacity: 0.6;
+
+  }
+  50%{
+    opacity: 0.5;
+
+  }
+  60%{
+    opacity: 0.4;
+
+  }
+  70%{
+    opacity: 0.3;
+
+  }
+  80%{
+    opacity: 0.2;
+
+  }
+  90%{
+    opacity: 0.1;
+
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
 }
