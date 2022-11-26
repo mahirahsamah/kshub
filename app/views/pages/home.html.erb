@@ -1,6 +1,14 @@
 
 <% if current_user %>
 
-<%= render announcements_path %>
+<%= link_to 'Edit account', edit_user_registration_path %>
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+<%= link_to 'Announcements', announcements_path %>
+
+<%= link_to 'Events', events_path %>
+
+<%= link_to 'Merchandise', merches_path %>
 
 <% end %>
