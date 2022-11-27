@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <head>
+<%= stylesheet_link_tag "style.css" %>
   <style>
     table {
       width: 80%;
@@ -30,7 +31,7 @@
   </style>
 </head>
 
-<h1 style="margin-left:40px; margin-top:40px">My Profile</h1>
+<h1 class = "profile_h" style="margin-top:40px">My Profile</h1>
 
 <table>
   <tbody>
@@ -69,7 +70,7 @@
 </table>
 
 <div style="text-align:center; padding-top:20px; width:100%">
-  <div class="btn btn-outline-secondary">
+  <div class="btn btn-outline-secondary" style="align-items: center">
       <%= link_to 'Edit', edit_user_registration_path(@user), :class => "btn newMerchandise"  %>
   </div>
 </div>

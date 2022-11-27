@@ -68,16 +68,14 @@
 
       <div class="actions" style="margin-top:20px">
         <div style="display:flex;">
-          <div style="width:33%; margin-left: 0vw"> 
 
-          </div>
           <div style="width:33%; justify-content:center; display:flex"> 
             <%= f.submit "Update Profile", class: "btn btn-outline-secondary newMerchandise signupPageButton"  %>
           </div>
-          <div style="width:33%"> 
 
+          <div class= "btn btn-outline-secondary newMerchandise signupPageButton" style="width:33%; justify-content:center; display:flex"> 
+            <%= button_to("delete", @user, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true}) %>
           </div>
-
 
         </div>
 
