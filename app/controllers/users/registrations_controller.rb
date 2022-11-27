@@ -3,7 +3,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  after_action :welcome, only: :create
 
+  def welcome
+    flash[:notice] = "Thank you for signing up, please wait for an admin to approve your account."
+  end
   # GET /resource/sign_up
   # def new
   #   super

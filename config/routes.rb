@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
   resources :events
   resources :announcements
   root to: 'pages#home'
-  #root to: 'public#homepage'
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+  resources :users, only: [:index]
 
   resources :ks_hubs
   resources :profile_page

@@ -63,6 +63,13 @@
         <td colspan="3"><%= user.pledgeclass %></td>
         <td colspan="3"><%= user.major %></td>
         <% if current_user && current_user.admin %>
+          
+          <tr>
+            <td><%= user.email %>
+            <td><%= user.approved %>
+            <td><%= link_to "Edit", edit_user_path(user) %>
+          </tr>
+          
           <% if current_user != user %>
           <td><div class="btn btn-outline-secondary" style="align-content=center">
             <%= link_to 'Remove', members_remove_path(user), :class => "btn newMerchandise"  %>

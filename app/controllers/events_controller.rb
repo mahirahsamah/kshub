@@ -8,6 +8,12 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @event = Event.find(params[:id])
+    @etitle = @event.title
+    @ebody = @event.body
+    @elocation = @event.location
+    @edate = @event.date
+    @eorganizer = @event.organizer
   end
 
   # GET /events/new
@@ -24,7 +30,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     respond_to do |format|
-      if @event.save
+      if @event.save and @event.ann == true
+        format.html { redirect_to new_announcement_path(event_id: @event.id), notice: "Create an Announcement for this Event." }
+        #format.json { render :show, status: :created, location: @event }
+      elsif @event.save and @event.ann == false
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
@@ -32,7 +41,14 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
+    
+
   end
+
+  #if @event.ann == true
+    #flash[:success] = "The Event and Announcement was successfully created."
+    #redirect_to new_announcement_path(ann: @event.ann)
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
@@ -57,6 +73,15 @@ class EventsController < ApplicationController
     end
   end
 
+  # send info from new event form to announcement form
+  def capture_form_data
+    @event = Event.find(params[:id])
+    
+  end
+
+  
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -65,6 +90,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body, :location, :date, :organizer)
+      params.require(:event).permit(:title, :body, :location, :date, :organizer, :ann, :make_event_announcement)
     end
 end
