@@ -13,10 +13,11 @@
   </head>
 
   <body style="background-color:#E7D1B5;">
+  
   <div class="flash-message-wrapper">
     <% flash.each do |key, value| %>
       <div class="<%= flash_class(key) %>">
-            <%= value %>
+        <%= value %>
       </div>
     <% end %>
   </div>

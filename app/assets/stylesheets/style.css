@@ -176,13 +176,15 @@ h4 {
 }
 
 .flash-message-wrapper{
-  width: 630px;
+  width: 430px;
+  height: 100px;
   text-align: center;
   position:fixed; 
-  top: 0px;  
-  left: 29%;
+  top: 120px;  
+  left: 1%;
   z-index:9999; 
   border-radius:0px;
+
 
   -webkit-animation: seconds 1.0s forwards;
   -webkit-animation-iteration-count: 1;
