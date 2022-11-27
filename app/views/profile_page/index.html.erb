@@ -72,12 +72,6 @@
   <div class="btn btn-outline-secondary">
       <%= link_to 'Edit', edit_user_registration_path(@user), :class => "btn newMerchandise"  %>
   </div>
-
-  <% if current_user && current_user.admin %>
-    <div class="btn btn-outline-secondary" style="align-content=center">
-      <%= link_to 'Admin Dashboard', admin_root_path, :class => "btn newMerchandise"  %>
-    </div>
-  <% end %>
 </div>
 
 <br>
