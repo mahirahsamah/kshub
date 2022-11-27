@@ -1,9 +1,8 @@
-<h1 style="margin-left:40px; margin-top:40px;">New Announcement</h1>
-
 <% if params[:event_id] %>
 
 <%= render 'form2', announcement: @announcement %>
 <% else %>
+<h1 style="margin-left:40px; margin-top:40px;">New Announcement</h1>
 <%= render 'form', announcement: @announcement %>
 <% end %>
 
