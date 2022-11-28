@@ -74,7 +74,7 @@
           </div>
 
           <div class= "btn btn-outline-secondary newMerchandise signupPageButton" style="width:33%; justify-content:center; display:flex"> 
-            <%= button_to("delete", @user, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true}) %>
+            <%= link_to 'Delete', @user, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true} %>
           </div>
 
         </div>
