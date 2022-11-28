@@ -65,10 +65,12 @@
         <td colspan="3"><%= user.pledgeclass %></td>
         <td colspan="3"><%= user.major %></td>
         <% if current_user && current_user.admin %>
-            <td colspan="3"><%= user.approved %>
+
+            <td colspan="3"><%= user.approved %></td>
             <td colspan="3"><div class="btn btn-outline-secondary" style="align-content=center">
             <%= link_to 'Edit', edit_user_path(user), :class => "btn newMerchandise"  %>
           </div></td>
+
           <% if current_user != user %>
             <td colspan="3"><div class="btn btn-outline-secondary" style="align-content=center">
               <%= link_to 'Remove', members_remove_path(user), :class => "btn newMerchandise"  %>
