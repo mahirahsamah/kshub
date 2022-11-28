@@ -16,11 +16,20 @@ class User < ApplicationRecord
     end
   end
 
-  #def fullname_from_firstlast
-  #  if user.full_name.empty?
-  #    user.full_name = user.firstname + " " + user.lastname
-  #  end 
-  #end
+  def active_for_authentication? 
+    super && approved?
+  end 
+    
+  def inactive_message 
+    approved? ? super : :not_approved
+  end
+
+  after_create :send_admin_mail
+
+  def send_admin_mail
+    AdminMailer.new_user_waiting_for_approval(email).deliver_later
+    #AnnMailer.with(user: current_user, announcement: @announcement).ann_created.deliver_later
+  end
 
   def update_with_password(params, *options)
     if options.present?
@@ -52,5 +61,9 @@ class User < ApplicationRecord
     result
   end
 
-
+  # Method to update the status of a member to inactive
+  def self.update_active_status(user)
+    user.active = false
+    user.save
+  end
 end

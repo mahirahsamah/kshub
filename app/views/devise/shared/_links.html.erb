@@ -31,7 +31,7 @@
   <%- resource_class.omniauth_providers.each do |provider| %>
    
     <%= form_for "Login", url: omniauth_authorize_path(resource_name, provider), method: :post, data: {turbo: "false"} do |f| %>
-      <%= f.submit "Login", type: "image", src: url_for("/assets/btn_google_signin_dark_pressed_web.png") %>
+      <%= f.submit "Login", type: "image", src: url_for("/assets/btn_google_signin_dark_pressed_web.png"), style:"width:125%; height:auto" %>
     <% end %>
 
   <% end %>
