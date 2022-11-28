@@ -278,3 +278,21 @@ h4 {
   top:-85px;
 
 }
+
+.sesh-btn{
+  margin-top: 10px;
+}
+
+.move-down{
+  margin-top: 11px;
+  height: 51px;
+  width: 150px;
+  position: relative;
+
+  margin-left: 70px;
+  margin-right: 60px;
+}
+.lef{
+  position: relative;
+  left: 80px;
+}
