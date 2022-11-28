@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-    def index
-        if params[:approved] == "false"
-            @users = User.where(approved: false)
-        else
-            @users = User.all
-        end
-    end
+  def index
+    @users = if params[:approved] == 'false'
+               User.where(approved: false)
+             else
+               User.all
+             end
+  end
 end

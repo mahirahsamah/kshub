@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateMerches < ActiveRecord::Migration[6.1]
   def change
     create_table :merches do |t|
