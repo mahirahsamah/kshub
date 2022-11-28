@@ -22,6 +22,15 @@
 
 <h2 class = "signup">Log in</h2>
 
+  <div class="flash-message-wrapper">
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+        <%= value %>
+
+      </div>
+    <% end %>
+  </div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
  
   <div class="card shadow p-3 bg-white rounded " style=" margin:20px 43vh; margin-top:50px">
