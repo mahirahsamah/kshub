@@ -3,7 +3,6 @@ class MembersController < ApplicationController
     # GET /members
     def index
       @users = User.all
-      puts(@users)
     end
 
     def update

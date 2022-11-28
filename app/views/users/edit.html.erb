@@ -64,19 +64,16 @@
         <%= f.label "Approved" %>
     </div>
 
-
-
       <div class="actions" style="margin-top:20px">
-        <div style="display:flex;">
+        <div style="display:flex; justify-content:center;">
 
-          <div style="width:33%; justify-content:center; display:flex"> 
-            <%= f.submit "Update Profile", class: "btn btn-outline-secondary newMerchandise signupPageButton"  %>
+          <div style="width:33%; justify-content:center; display:flex; margin:10px;"> 
+            <%= f.submit "Update Profile", class: "btn btn-outline-secondary newMerchandise signupPageButton" %>
           </div>
 
-          <div class= "btn btn-outline-secondary newMerchandise signupPageButton" style="width:33%; justify-content:center; display:flex"> 
-            <%= link_to 'Delete', @user, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true} %>
+          <div style="width:33%; justify-content:center; display:flex; margin:10px;">
+              <%= link_to 'Delete', @user, :onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true, :class => "btn btn-outline-secondary newMerchandise signupPageButton" %>
           </div>
-
         </div>
 
       </div>
