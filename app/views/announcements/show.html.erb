@@ -47,22 +47,14 @@
               </div>
 
               <div class="announcementCardBody1">
-                  <div>
-                    <Strong>Description: </Strong>
-                          <%= @announcement.body %>
-                  </div>
+                <p>
+                    <Strong>Comments: </Strong>
+                    <%= render @announcement.comments %>
+                    <%= render partial: 'comments/form', locals: {announcement: @announcement} %>
+                </p>
               </div>
           </div>
         </div>
-        <p>
-          <Strong>Comments: </Strong>
-          <%= render @announcement.comments %>
-        </p>
-
-
-
-
-
 </div>
 
 
