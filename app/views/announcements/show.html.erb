@@ -41,14 +41,13 @@
                   </div>
 
               </div>
-
-              <div class="announcementCardBody1">
-                <p>
-                    <Strong>Comments: </Strong>
-                    <%= render @announcement.comments %>
-                    <%= render partial: 'comments/form', locals: {announcement: @announcement} %>
-                </p>
-              </div>
           </div>
+        </div>
+        </div class="commentsSection">
+            <p>
+                <Strong>Comments: </Strong>
+                <%= render @announcement.comments %>
+                <%= render partial: 'comments/form', locals: {announcement: @announcement} %>
+            </p>
         </div>
 </div>
