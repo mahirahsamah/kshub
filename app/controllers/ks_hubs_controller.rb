@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class KsHubsController < ApplicationController
-  before_action :set_ks_hub, only: %i[ show edit update destroy ]
+  before_action :set_ks_hub, only: %i[show edit update destroy]
 
   # GET /ks_hubs or /ks_hubs.json
   def index
@@ -7,8 +9,7 @@ class KsHubsController < ApplicationController
   end
 
   # GET /ks_hubs/1 or /ks_hubs/1.json
-  def show
-  end
+  def show; end
 
   # GET /ks_hubs/new
   def new
@@ -16,8 +17,7 @@ class KsHubsController < ApplicationController
   end
 
   # GET /ks_hubs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /ks_hubs or /ks_hubs.json
   def create
@@ -25,7 +25,7 @@ class KsHubsController < ApplicationController
 
     respond_to do |format|
       if @ks_hub.save
-        format.html { redirect_to ks_hub_url(@ks_hub), notice: "Ks hub was successfully created." }
+        format.html { redirect_to ks_hub_url(@ks_hub), notice: 'Ks hub was successfully created.' }
         format.json { render :show, status: :created, location: @ks_hub }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class KsHubsController < ApplicationController
   def update
     respond_to do |format|
       if @ks_hub.update(ks_hub_params)
-        format.html { redirect_to ks_hub_url(@ks_hub), notice: "Ks hub was successfully updated." }
+        format.html { redirect_to ks_hub_url(@ks_hub), notice: 'Ks hub was successfully updated.' }
         format.json { render :show, status: :ok, location: @ks_hub }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class KsHubsController < ApplicationController
     @ks_hub.destroy
 
     respond_to do |format|
-      format.html { redirect_to ks_hubs_url, notice: "Ks hub was successfully destroyed." }
+      format.html { redirect_to ks_hubs_url, notice: 'Ks hub was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ks_hub
-      @ks_hub = KsHub.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def ks_hub_params
-      params.require(:ks_hub).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ks_hub
+    @ks_hub = KsHub.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def ks_hub_params
+    params.require(:ks_hub).permit(:title)
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -16,11 +18,11 @@ class User < ApplicationRecord
     end
   end
 
-  def active_for_authentication? 
+  def active_for_authentication?
     super && approved?
-  end 
-    
-  def inactive_message 
+  end
+
+  def inactive_message
     approved? ? super : :not_approved
   end
 
@@ -28,7 +30,7 @@ class User < ApplicationRecord
 
   def send_admin_mail
     AdminMailer.new_user_waiting_for_approval(email).deliver_later
-    #AnnMailer.with(user: current_user, announcement: @announcement).ann_created.deliver_later
+    # AnnMailer.with(user: current_user, announcement: @announcement).ann_created.deliver_later
   end
 
   def update_with_password(params, *options)
@@ -49,13 +51,13 @@ class User < ApplicationRecord
     end
 
     result = if valid_password?(current_password)
-      update(params, *options)
-    else
-      assign_attributes(params, *options)
-      valid?
-      errors.add(:current_password, current_password.blank? ? :blank : :invalid)
-      false
-    end
+               update(params, *options)
+             else
+               assign_attributes(params, *options)
+               valid?
+               errors.add(:current_password, current_password.blank? ? :blank : :invalid)
+               false
+             end
 
     clean_up_passwords
     result

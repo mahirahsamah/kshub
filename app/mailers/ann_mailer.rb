@@ -1,5 +1,6 @@
-class AnnMailer < ApplicationMailer
+# frozen_string_literal: true
 
+class AnnMailer < ApplicationMailer
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -8,8 +9,8 @@ class AnnMailer < ApplicationMailer
   def ann_created
     @user = params[:user]
     @announcement = params[:announcement]
-    @greeting = "Hi"
+    @greeting = 'Hi'
 
-    mail to: User.all.pluck(:email), from: "kshub.kappasigma@gmail.com" , subject: "New Announcement on KS Hub" # send email to all users
+    mail to: User.all.pluck(:email), from: 'kshub.kappasigma@gmail.com', subject: 'New Announcement on KS Hub' # send email to all users
   end
 end
