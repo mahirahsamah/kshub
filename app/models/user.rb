@@ -61,5 +61,9 @@ class User < ApplicationRecord
     result
   end
 
-
+  # Method to update the status of a member to inactive
+  def self.update_active_status(user)
+    user.active = false
+    user.save
+  end
 end

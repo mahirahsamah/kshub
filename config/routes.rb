@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-  resources :users, only: [:index]
+
+  #devise_for :users
+  resources :users#, only: [:index]
 
   resources :ks_hubs
   resources :profile_page
@@ -21,11 +23,10 @@ Rails.application.routes.draw do
   resources :profile
   resources :merches
 
-  put 'profile_page' => 'profile_page#edit', :as => 'profile_page_update_path'
   get 'members' => 'members#index', :as => 'members_path'
-  delete 'members' => 'members#destroy', :as => 'members_delete_path'
 
+  # Added route for updating the status of a member to inactive
+  get 'members/remove/:id' => 'members#set_active_status', :as => 'members_remove'
 
-  #root 'ks_hubs#index'
   # or details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

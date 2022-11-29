@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1 style="margin-left:40px; margin-top:40px;">Announcements</h1>
+<head>
+<%= stylesheet_link_tag "style.css" %></head>
+<h1  class = "profile_h" style="margin-top:40px">Announcements</h1>
 
 <% if current_user && current_user.admin %>
 
     <div class="createButtonContainer">
-        <div class="btn btn-outline-secondary">
+        <div class="btn btn-outline-secondary new-btn">
             <%= link_to 'New Announcement', new_announcement_path , :class => "btn newMerchandise"  %>
         </div>
     </div>
@@ -50,60 +52,19 @@
 
 
           <div class="announcementCardBody">
-              <div class="announcementCardBody1">
+              <div class="announcementCardBody1" style="width:100%">
                   <div>
                     <Strong>Description: </Strong>
                           <%= announcement.body %>
                   </div>
 
-              </div>
-
-              <div class="announcementCardBody1">
-                  <div>
-                    <Strong>Description: </Strong>
-                          <%= announcement.body %>
-                  </div>
               </div>
           </div>
         </div>
-
-
-
-
     <% end %>
-
 </div>
 
+<div style="height:50vh">
+</div>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @announcements.each do |announcement| %>
-      <tr>
-        <td><%= announcement.title %></td>
-        <td><%= announcement.body %></td>
-        <td><%= announcement.user_id %></td>
-        <td><%= link_to 'Show', announcement %></td>
-        <% if current_user && current_user.admin %>
-          <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-          <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% if current_user && current_user.admin %>
-<%= link_to 'New Announcement', new_announcement_path %>
-<% end %>
+<%# link_to 'Show', announcement %>

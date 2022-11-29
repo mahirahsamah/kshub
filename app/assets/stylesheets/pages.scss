@@ -77,6 +77,8 @@ h2 {
 .announcementCardBody {
     padding: 25px;
     display: flex;
+    height: 65%;
+    align-items: center;
 }
 
 .announcementCardBody1 {
@@ -115,7 +117,8 @@ h2 {
     color: #344734;
     background-color: transparent;
     background-image: none;
-    border-color: #344734
+    border-color: #344734;
+     
 }
 
 .btn-outline-secondary:hover {
