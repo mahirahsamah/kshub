@@ -1,6 +1,6 @@
 <form accept-charset="UTF-8" action="<%=announcement_comments_path(announcement) %>" method="post">
   <input name="utf8" type="hidden" value="&#x2713;" />
   <%= token_tag nil %>
-  <textarea name="comment[content]" rows="6" cols="60"> comment here</textarea>
+  <textarea name="comment[content]" rows="6" cols="60" placeholder="Comment"></textarea>
   <input type="submit" name="Submit">
 </form>
