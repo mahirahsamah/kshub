@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
         if !@comment.save
             flash[:notice] = @comment.errors.full_messages.to_sentence
         end
-        redirect_to @comment.announcement
+        redirect_to announcement_path(params[:announcement_id])
     end
 
     private
