@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_28_021927) do
+ActiveRecord::Schema.define(version: 2022_11_29_003448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_11_28_021927) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active", default: true
     t.index ["user_id"], name: "index_announcements_on_user_id"
   end
 
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2022_11_28_021927) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "ann"
+    t.boolean "active", default: true
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 2022_11_28_021927) do
     t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active", default: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -107,8 +110,8 @@ ActiveRecord::Schema.define(version: 2022_11_28_021927) do
     t.string "pledgeclass"
     t.string "major"
     t.string "username"
-    t.boolean "active", default: true
     t.boolean "approved", default: false, null: false
+    t.boolean "active", default: true
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
