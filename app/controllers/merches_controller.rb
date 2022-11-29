@@ -40,14 +40,18 @@ class MerchesController < ApplicationController
     end
   end
 
-  def destroy
+  def set_active_status
     @merch = Merch.find(params[:id])
-    @merch.destroy!
+    Merch.update_active_status(@merch)
+    redirect_to merches_path
+  end
 
-    respond_to do |format|
-      format.html { redirect_to merch_url(@merch), notice: 'Merchandise was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  def remove_merch
+    @merch = Merch.find(params[:id])
+    puts(@merch)
+    @merch.destroy
+
+    redirect_to merches_path
   end
 
   private

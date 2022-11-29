@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <head>
+<%= stylesheet_link_tag "style.css" %>
   <style>
     table {
       width: 80%;
@@ -8,7 +9,8 @@
     }
 
     th {
-      border: 1px solid #ddd;
+      border: 1px solid #FFFFFF;
+      border-radius: 5px;
       padding: 8px;
       background-color: #8B0000;
       color: white;
@@ -17,7 +19,8 @@
     }
 
     td {
-      border: 1px solid #ddd;
+      border: 1px solid #FFFFFF;
+      border-radius: 5px;
       padding: 8px;
       background-color: #DCDCDC;
       width: 70%;
@@ -30,16 +33,7 @@
   </style>
 </head>
 
-<h1 style="padding-left=20px" margin="auto">My Profile</h1>
-<button class="btn" type="button">
-  <%= link_to 'Edit', edit_user_registration_path(@user) %>
-</button>
-
-<% if current_user && current_user.admin %>
-  <button class="btn" type="button">
-    <%= link_to 'Admin Dashboard', admin_root_path %>
-  </button>
-<% end %>
+<h1 class = "profile_h" style="margin-top:40px">My Profile</h1>
 
 <table>
   <tbody>
@@ -76,5 +70,11 @@
     </tr>
   </tbody>
 </table>
+
+<div style="text-align:center; padding-top:20px; width:100%">
+  <div class="btn btn-outline-secondary" style="align-items: center">
+      <%= link_to 'Edit', edit_user_registration_path(@user), :class => "btn newMerchandise"  %>
+  </div>
+</div>
 
 <br>

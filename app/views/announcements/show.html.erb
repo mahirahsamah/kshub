@@ -1,15 +1,11 @@
 <div style="display: flex; justify-content:center; align-items:center; height: 80vh;"> 
 
         <div class="announcementCard">
-          
-          
-
             <div class="announcementCardTitle" >
                 <div style="width:33%">
                     <div class="btn btn-outline-success">
                         <%= link_to 'Back', announcements_path, class: "btn  newMerchandise"  %>
                     </div>
-                
                 </div>
                 <div style="width:33%" class="announcementCardTitle">
                     <%= @announcement.title %>
@@ -60,53 +56,3 @@
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>
-  <strong>Title:</strong>
-  <%= @announcement.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @announcement.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @announcement.user.username %>
-</p>
-
-<% if current_user && current_user.admin %>
-<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
-<% end %>
-<%= link_to 'Back', announcements_path %>

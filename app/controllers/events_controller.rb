@@ -73,6 +73,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def set_active_status
+    @event = Event.find(params[:id])
+    Event.update_active_status(@event)
+    redirect_to events_path
+  end
+
   # send info from new event form to announcement form
   def capture_form_data
     @event = Event.find(params[:id])

@@ -72,6 +72,12 @@ class AnnouncementsController < ApplicationController
   # @make_event_announcement = params[:make_event_announcement]
   # end
 
+  def set_active_status
+    @announcement = Announcement.find(params[:id])
+    Announcement.update_active_status(@announcement)
+    redirect_to announcements_path
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
