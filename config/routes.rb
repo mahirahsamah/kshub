@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :events
-  resources :announcements
+  resources :announcements do 
+    resources :comments
+  end
   root to: 'pages#home'
 
   devise_for :users, controllers: {
