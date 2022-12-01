@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    
   end
 
   # GET /events/1 or /events/1.json
@@ -16,11 +17,22 @@ class EventsController < ApplicationController
     @elocation = @event.location
     @edate = @event.date
     @eorganizer = @event.organizer
+
+    #@newdate = @event.date[1..10]
+    #@newtime = @event.time[11..13]
+    @ed = @event.date
+    #ed = @ed
+  end
+
+  def extract_date
+    ed = @event.date
+  #  @ed = ed[1..10]
   end
 
   # GET /events/new
   def new
     @event = Event.new
+  
   end
 
   # GET /events/1/edit
@@ -93,6 +105,6 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:title, :body, :location, :date, :organizer, :ann, :make_event_announcement)
+    params.require(:event).permit( :title, :body, :location, :date, :organizer, :ann, :make_event_announcement)
   end
 end

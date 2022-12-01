@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(version: 2022_11_29_003448) do
     t.string "pledgeclass"
     t.string "major"
     t.string "username"
-    t.boolean "approved", default: false, null: false
     t.boolean "active", default: true
+    t.boolean "approved", default: false, null: false
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
