@@ -1,6 +1,12 @@
 <form accept-charset="UTF-8" action="<%=announcement_comments_path(announcement) %>" method="post">
   <input name="utf8" type="hidden" value="&#x2713;" />
   <%= token_tag nil %>
-  <textarea name="comment[content]" rows="6" cols="60" placeholder="Comment"></textarea>
-  <input type="submit" name="Submit">
+    <%# <textarea name="comment[content]" rows="6" cols="60" placeholder="Comment"></textarea> %>
+    <div style="display:flex" >
+    <div class = "form-group" style="width:90%">
+        <label style="margin-bottom:5px;   font-weight: bold;" for = "name"> New Comment</label>
+        <textarea class = "form-control" name="comment[content]" rows = "3" placeholder = "Enter Comment here"></textarea>
+    </div>
+    <input type="submit" name="Submit"  class="btn btn-outline-secondary newMerchandise" style="width:10%; margin-top:30px; margin-left:10px">
+
 </form>

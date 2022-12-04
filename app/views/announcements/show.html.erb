@@ -1,4 +1,4 @@
-<div style="display: flex; justify-content:center; align-items:center; height: 80vh;"> 
+<div style="display: flex; justify-content:center; align-items:center; height: 40vh;"> 
 
         <div class="announcementCard">
             <div class="announcementCardTitle" >
@@ -43,11 +43,14 @@
               </div>
           </div>
         </div>
-        </div class="commentsSection">
-            <p>
-                <Strong>Comments: </Strong>
+        </div>
+
+        <div class="container" >
+            <div class="be-comment-block">
+                <h1 class="" style="margin-bottom:20px">Comments</h1>
                 <%= render @announcement.comments %>
                 <%= render partial: 'comments/form', locals: {announcement: @announcement} %>
-            </p>
+            </div>
         </div>
+</div>
 </div>
