@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_003448) do
     t.text "content", null: false
     t.bigint "announcement_id", null: false
     t.bigint "user_id", null: false
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["announcement_id"], name: "index_comments_on_announcement_id"
@@ -110,8 +111,8 @@ ActiveRecord::Schema.define(version: 2022_11_29_003448) do
     t.string "pledgeclass"
     t.string "major"
     t.string "username"
-    t.boolean "approved", default: false, null: false
     t.boolean "active", default: true
+    t.boolean "approved", default: false, null: false
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
