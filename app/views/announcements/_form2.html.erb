@@ -27,7 +27,7 @@
 
   <div class="field">
     <%= form.label :body, { class: "form-label"} %>
-    <%= form.text_area :body, :value => "#{@ebody} \nLocation: #{@elocation} \nDate and time: #{@edate} \nOrganizer: #{@eorganizer}", class: "form-control" %>
+    <%= form.text_area :body, :value => "#{@ebody} \nLocation: #{@elocation} \nDate: #{@event.date.strftime('%m-%d-%Y')} \nTime: #{ @event.date.strftime('%I:%M:%S %p') } \nOrganizer: #{@eorganizer}", class: "form-control" %>
   </div>
 
 

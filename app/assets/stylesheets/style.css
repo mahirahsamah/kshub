@@ -60,13 +60,7 @@ h4 {
   margin-top: 5%;
 }
 
-.nav-img{
-  position: relative;
-  right: 350%;
-  top: -3px;
-  width: 40%;
-  height: auto;
-}
+
 
 .landing-nav{
   font-family: 'Inter';
@@ -156,7 +150,15 @@ h4 {
 
 .loggedin-nav{
   position: relative;
-  right: 314px;
+  right: 298px;
+  top: -3px;
+  width: 40%;
+  height: auto;
+}
+
+.nav-img{
+  position: relative;
+  right: 350%;
   top: -3px;
   width: 40%;
   height: auto;
@@ -177,7 +179,7 @@ h4 {
 .one {
   position: relative;
   top: 17px; 
-  right: 70px;
+  right: 65px;
 }
 
 .flash-message-wrapper{

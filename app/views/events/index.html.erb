@@ -72,9 +72,14 @@
                                 <%= event.organizer %>
                         </div>
                         <div style="width:50%; padding:10px">
-                            <Strong>Date: </Strong>
-                                <%= event.date %>
-                        </div>
+                           <Strong>Date: </Strong>
+                               <%= event.date.strftime('%m-%d-%Y') %>
+                       </div>
+
+                       <div style="width:50%; padding:10px">
+                           <Strong>Time: </Strong>
+                               <%= event.date.strftime('%I:%M:%S %p') %>
+                       </div>
                     </div>
                 </div>
             </div>

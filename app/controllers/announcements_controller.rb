@@ -6,6 +6,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements or /announcements.json
   def index
     @announcements = Announcement.all
+    @announcements = Announcement.order(created_at: :desc)
   end
 
   # GET /announcements/1 or /announcements/1.json

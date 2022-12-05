@@ -1,11 +1,13 @@
 # frozen_string_literal: true
-
+require 'active_support/core_ext'
+require 'date'
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[show index]
   # GET /events or /events.json
   def index
     @events = Event.all
+    @events = Event.order(created_at: :desc)
   end
 
   # GET /events/1 or /events/1.json
@@ -15,6 +17,7 @@ class EventsController < ApplicationController
     @ebody = @event.body
     @elocation = @event.location
     @edate = @event.date
+    @etime = @event.date
     @eorganizer = @event.organizer
   end
 
