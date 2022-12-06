@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     def set_active_status
         @comment = Comment.find(params[:id])
         Comment.update_active_status(@comment)
-        redirect_to announcement_path(params[:announcement_id])
+        redirect_to announcements_path
     end
     
     private
