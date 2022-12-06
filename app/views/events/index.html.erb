@@ -15,6 +15,11 @@
 
  <div class="merchCardContainers">
      <% @events.each do |event| %>
+
+        <% if Time.now > (event.date + 30.hours)%>
+            <%= event.destroy %>
+        <%end%>
+
         <% if event.active %>
              <div class="merchCard">
 
@@ -47,9 +52,6 @@
                         </div>
                     <% end %>
 
-
-
-
                     </div>
                 </div>
 
@@ -80,6 +82,8 @@
                            <Strong>Time: </Strong>
                                <%= event.date.strftime('%I:%M:%S %p') %>
                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -92,6 +96,3 @@
 
 
  <%# link_to 'Show', event  %>
-
-
-

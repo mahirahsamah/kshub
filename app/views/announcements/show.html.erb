@@ -40,6 +40,11 @@
                           <%= @announcement.body %>
                   </div>
 
+                  <div>
+                    <Strong>Posted on: </Strong>
+                          <%= @announcement.created_at.strftime('%m-%d-%Y') %>
+                  </div>
+
               </div>
           </div>
         </div>

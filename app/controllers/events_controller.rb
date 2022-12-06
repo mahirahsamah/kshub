@@ -8,6 +8,13 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @events = Event.order(created_at: :desc)
+
+    #@events_to_delete = @events.where( @event.date.strftime('%m-%d-%Y') " < ?", Time.now.strftime('%m-%d-%Y') )
+
+    #if @event.date.strftime('%m-%d-%Y') < Time.now.strftime("%m-%d-%Y")
+     # @event.destroy
+    #end
+
   end
 
   # GET /events/1 or /events/1.json
@@ -19,6 +26,9 @@ class EventsController < ApplicationController
     @edate = @event.date
     @etime = @event.date
     @eorganizer = @event.organizer
+
+    #@events_to_delete = @event.where(@event.date.strftime('%m-%d-%Y') < Time.now.strftime('%m-%d-%Y'))
+    
   end
 
   # GET /events/new
