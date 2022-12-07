@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get 'announcements/remove/:id' => 'announcements#set_active_status', :as => 'announcements_remove'
   get 'events/remove/:id' => 'events#set_active_status', :as => 'events_remove'
   get 'merches/remove/:id' => 'merches#set_active_status', :as => 'merches_remove'
+  get 'announcements/comments/remove/:id' => 'comments#set_active_status', :as => 'comments_remove'
 
   # or details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

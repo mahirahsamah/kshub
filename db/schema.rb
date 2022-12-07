@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_003448) do
     t.text "content", null: false
     t.bigint "announcement_id", null: false
     t.bigint "user_id", null: false
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["announcement_id"], name: "index_comments_on_announcement_id"
