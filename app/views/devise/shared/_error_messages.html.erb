@@ -1,4 +1,14 @@
 <% if resource.errors.any? %>
+
+<div class="flash-message-wrapper">
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+        <%= value %>
+
+      </div>
+    <% end %>
+  </div>
+
   <div id="error_explanation">
     <h2>
       <%= I18n.t("errors.messages.not_saved",

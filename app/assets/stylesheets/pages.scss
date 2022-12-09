@@ -3,17 +3,35 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 // E7D1B5
 // 
+
+h2 {
+    margin-left: 40px;
+    margin-top: 40px
+}
+
+.signupPageButton{
+    width:300px !important
+}
+.field {
+    margin: 4px;
+}
+.width50{
+    width: 50%;
+}
+
+
 .navbarStyles {
     background-color: #344734;
     height: 100px;
     padding: 25px
 }
 
+
 .nav-link {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 39px;
     display: flex;
     align-items: center;
@@ -24,6 +42,7 @@
     // background: #000;
     text-decoration: underline;
 }
+
 // 
 .cardContainers {
     margin: 0 auto;
@@ -37,7 +56,8 @@
     margin-top: 30px;
     background-color: #D9D9D9;
     height: 200px;
-    width: 80%
+    width: 80%;
+    border-radius: 50px;
 }
 
 .announcementCardTitle {
@@ -51,16 +71,20 @@
     font-weight: 400;
     height: 60px;
     font-size: 25px;
+    padding: 17px;
 }
 
 .announcementCardBody {
     padding: 25px;
     display: flex;
+    height: 65%;
+    align-items: center;
 }
 
 .announcementCardBody1 {
     width: 50%;
 }
+
 // 
 
 .KSTable {
@@ -82,10 +106,10 @@
 }
 
 // 
-.createButtonContainer{
+.createButtonContainer {
     display: flex;
     justify-content: flex-end;
-    padding-right:40px;
+    padding-right: 40px;
 }
 
 
@@ -93,7 +117,8 @@
     color: #344734;
     background-color: transparent;
     background-image: none;
-    border-color: #344734
+    border-color: #344734;
+     
 }
 
 .btn-outline-secondary:hover {
@@ -111,10 +136,11 @@
 
 
 // 
-.createMerchPayButtonContainer{
+.createMerchPayButtonContainer {
     display: flex;
     justify-content: center;
     width: 35vw;
+    margin-top: 15px;
 }
 
 
@@ -136,11 +162,11 @@
     background-color: #913031 !important;
     border-color: #913031
 }
+
 // 
-.createMerchDelPayButtonContainer{
+.createMerchDelPayButtonContainer {
     display: flex;
     justify-content: flex-end;
-    margin: 17px;
 }
 
 
@@ -151,7 +177,7 @@
     border-color: #fff;
     height: 40px;
     padding: 0;
-    margin:2px
+    margin: 2px
 }
 
 .btn-outline-success:hover {
@@ -165,6 +191,7 @@
     background-color: #913031 !important;
     border-color: #913031
 }
+
 // 
 
 .merchCardContainers {
@@ -179,9 +206,10 @@
 
 .merchCard {
     background-color: #D9D9D9;
-    height: 200px;
+    height: 225px;
     width: 41%;
     margin: 15px 30px 15px 30px;
+    border-radius: 50px;
 
 }
 
@@ -202,5 +230,120 @@
     padding: 25px;
     display: flex;
 }
-// 
 
+// comments
+
+.be-comment-block {
+    margin-bottom: 50px !important;
+    border: 1px solid #edeff2;
+    border-radius: 50px;
+    padding: 50px 70px;
+    border:1px solid #ffffff;
+}
+
+.comments-title {
+    font-size: 16px;
+    color: #262626;
+    margin-bottom: 15px;
+    font-family: 'Conv_helveticaneuecyr-bold';
+}
+
+.be-img-comment {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.be-ava-comment {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.be-comment-content {
+    margin-left: 80px;
+}
+
+.be-comment-content span {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.be-comment-name {
+    font-size: 13px;
+    font-family: 'Conv_helveticaneuecyr-bold';
+}
+
+.be-comment-content a {
+    color: #383b43;
+}
+
+.be-comment-content span {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.be-comment-time {
+    text-align: right;
+}
+
+.be-comment-time {
+    font-size: 11px;
+    color: #b4b7c1;
+}
+
+.be-comment-text {
+    font-size: 13px;
+    line-height: 18px;
+    color: #7a8192;
+    display: block;
+    background: #f6f6f7;
+    border: 1px solid #edeff2;
+    padding: 15px 20px 20px 20px;
+}
+
+.form-group.fl_icon .icon {
+    position: absolute;
+    top: 1px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+    background: #f6f6f7;
+    color: #b5b8c2;
+    text-align: center;
+    line-height: 50px;
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.form-group .form-input {
+    font-size: 13px;
+    line-height: 50px;
+    font-weight: 400;
+    color: #b4b7c1;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #edeff2;
+    border-radius: 3px;
+}
+
+.form-group.fl_icon .form-input {
+    padding-left: 70px;
+}
+
+.form-group textarea.form-input {
+    height: 150px;
+}
+
+
+
+// 

@@ -1,46 +1,46 @@
-<h1>Edit <%= resource_name.to_s.humanize %></h1>
+<h1 class = "profile_h">Edit <%= resource_name.to_s.humanize %></h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "student@tamu.edu" %>
   </div>
 
   <div class="field">
     <%= f.label :firstname %><br />
-    <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname" %>
+    <%= f.text_field :firstname, autofocus: true, autocomplete: "John" %>
   </div>
 
   <div class="field">
     <%= f.label :lastname %><br />
-    <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname" %>
+    <%= f.text_field :lastname, autofocus: true, autocomplete: "Doe" %>
   </div>
 
   <div class="field">
     <%= f.label :uin %><br />
-    <%= f.text_field :uin, autofocus: true, autocomplete: "uin" %>
+    <%= f.text_field :uin, autofocus: true, autocomplete: "123456789" %>
   </div>
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "john_doe" %>
   </div>
 
   <div class="field">
     <%= f.label :phonenumber %><br />
-    <%= f.text_field :phonenumber, autofocus: true, autocomplete: "phonenumber" %>
+    <%= f.text_field :phonenumber, autofocus: true, autocomplete: "4445556666" %>
   </div>
 
   <div class="field">
     <%= f.label :major %><br />
-    <%= f.text_field :major, autofocus: true, autocomplete: "major" %>
+    <%= f.text_field :major, autofocus: true, autocomplete: "Major" %>
   </div>
 
   <div class="field">
     <%= f.label :pledgeclass %><br />
-    <%= f.text_field :pledgeclass, autofocus: true, autocomplete: "pledgeclass" %>
+    <%= f.text_field :pledgeclass, autofocus: true, autocomplete: "Pledge Class" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

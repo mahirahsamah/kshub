@@ -11,32 +11,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+   <div class="card" style="border-color:#913031; margin:20vh; margin-top:50px;">
+   <div class="card-body">
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
+       <div class="field">
+         <%= form.label :title , { class: "form-label"}%>
+         <%= form.text_field :title , { class: "form-control", placeholder: "Title" }  %>
+       </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
+       <div class="field">
+         <%= form.label :body, { class: "form-label"} %>
+         <%= form.text_area :body , { class: "form-control", placeholder: "Body" } %>
+       </div>
 
-  <div class="field">
-    <%= form.label :organizer %>
-    <%= form.text_field :organizer %>
-  </div>
+       <div class="field">
+         <%= form.label :location , { class: "form-label"}%>
+         <%= form.text_field :location, { class: "form-control", placeholder: "Location" }  %>
+       </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+       <div class="field" style="margin-top:20px">
+         <%= form.label :date, { class: "form-label"} %>
+         <%= form.datetime_select :date, { class: "form-control", placeholder: "Date" }  %>
+       </div>
+
+       <div class="field">
+         <%= form.label :organizer, { class: "form-label"} %>
+         <%= form.text_field :organizer, { class: "form-control", placeholder: "Organizer" }  %>
+       </div>
+
+
+       <div class="field" style="margin-top:20px; margin-bottom:30px">
+         Make it an Announcement: <%= form.check_box :ann %>
+       </div>
+
+       <div class="actions">
+
+           <div style="display:flex;">
+           <div style="width:33%; margin-left: 0vw"> 
+             <%= link_to 'Back', events_path, class: "btn btn-outline-secondary newMerchandise"  %>
+           </div>
+           <div style="width:33%; justify-content:center; display:flex"> 
+             <%= form.submit "Submit", class: "btn btn-outline-secondary newMerchandise"  %>
+           </div>
+           <div style="width:33%"> </div>
+         </div>
+
+       </div>
+
+       </div>
+ </div>
+ <% end %>

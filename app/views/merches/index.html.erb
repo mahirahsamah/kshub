@@ -1,12 +1,15 @@
+<head><link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity=”sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z” crossorigin=”anonymous”></head>
+
 <p id="notice"><%= notice %></p>
 
-<h1 style="margin-left:40px; margin-top:40px">Merchandise</h1>
+<h1  class = "profile_h" style="margin-top:40px">Merchandise</h1>
 
+<div>
 
 <% if current_user && current_user.admin %>
 
     <div class="createButtonContainer">
-        <div class="btn btn-outline-secondary">
+        <div class="btn btn-outline-secondary new-btn">
             <%= link_to 'New Merchandise', new_merch_path, :class => "btn newMerchandise"  %>
         </div>
     </div>
@@ -15,10 +18,11 @@
 
 <div class="merchCardContainers">
     <% @merches.each do |merch| %>
+        <% if merch.active %>
             <div class="merchCard">
 
 
-            <div class="merchCardTitle">
+            <div class="merchCardTitle" style="padding:17px" >
                 <div style="width:33%">
 
                 
@@ -28,7 +32,7 @@
                 </div>
                 <div style="width:33%">
 
-                <% if current_user && current_user.admin %>
+                <% if current_user && current_user.admin%>
                     <div class="createMerchDelPayButtonContainer" style="">
 
                         <div class="btn btn-outline-success">
@@ -41,7 +45,7 @@
                              <%= link_to '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                            </svg>'.html_safe, merch, method: :delete, data: { confirm: 'Are you sure?' },  :class => "btn newMerchandise"  %>
+                            </svg>'.html_safe, merches_remove_path(merch), :class => "btn newMerchandise"  %>
                         </div>
                     </div>
                 <% end %>
@@ -67,45 +71,26 @@
 
                     <div class="createMerchPayButtonContainer">
                         <div class="btn btn-outline-primary">
-                            <%= link_to 'BUY NOW', merch.link , :class => "btn newPayMerchandise"  %>
+                            <% if merch.link.include? "https://" %>
+                                <%# <%= link_to 'BUY NOW', merch.link , :class => "btn newPayMerchandise"  %> 
+                            <% else %>
+                                <%# <%= link_to 'BUY NOW', "https://#{merch.link}" , :class => "btn newPayMerchandise"  %> 
+                            <% end %>
+                            <%= link_to 'BUY NOW', merch.link, target: '_blank' , :class => "btn newPayMerchandise"  %>
                         </div>
                     </div>
 
                 </div>
             </div>
             </div>
+        <% end %>
     <% end %>
 </div>
 
- <div style="height:30vh"></div>
-
-<table>
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Link</th>
-            <th colspan="3"></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @merches.each do |merch| %>
-            <tr>
-                <td><%= merch.name %></td>
-                <td><%= merch.price %></td>
-                <td><%= link_to merch.link, merch.link %></td>
-                <td><%= link_to 'Show', merch %></td>
-                <% if current_user && current_user.admin %>
-                    <td><%= link_to 'Edit', edit_merch_path(merch) %></td>
-                    <td><%= link_to 'Destroy', merch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
-            </tr>
-        <% end %>
-    </tbody>
-    
-</table>
+<div style="height:50vh;"></div>
+<div style="height:50vh;"></div>
 
 
-<br>
+
+</div>
 

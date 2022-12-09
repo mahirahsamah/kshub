@@ -13,70 +13,57 @@
   </head>
 
   <body style="background-color:#E7D1B5;">
+  
+  <div class="flash-message-wrapper">
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
       
   <% if user_signed_in? %>
     <nav class="navbar navbar-expand-md navbar-dark navbarStyles">
-      <a class="navbar-brand" href="#">KSHub</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarColor01" >
-        <ul class="navbar-nav mr-auto" style="width:87%; justify-content:center;">
+        <ul class="navbar-nav mr-auto" style="width:87%; justify-content:right;">
           <li class="nav-item">
-          <%= link_to announcements_path do %>
-            <%= image_tag "kslogo.png", class: 'nav-img' %>
-          <% end %>
+          <%= link_to root_path do%>
+            <%= image_tag "kslogo.png", class:"loggedin-nav" %>
+          <%end%>
           </li>
+        
           <li class="nav-item">
           </li>
           <li class="nav-item <%= active_class(announcements_path) %>">
-            <%= link_to 'Announcements', announcements_path, class: 'nav-link' %>
+            <%= link_to 'Announcements', announcements_path, class: 'nav-link one' %>
           </li>
           <li class="nav-item <%= active_class(events_path) %>">
-            <%= link_to 'Events', events_path , class: 'nav-link' %>
+            <%= link_to 'Events', events_path , class: 'nav-link one' %>
           </li>
           <li class="nav-item <%= active_class(merches_path) %>">
-           <%= link_to 'Merchandise', merches_path , class: 'nav-link'  %>
+           <%= link_to 'Merchandise', merches_path , class: 'nav-link one'  %>
           </li>
           <li class="nav-item <%= active_class(members_path) %>">
-            <%= link_to 'Roster', members_path, class: 'nav-link' %>
+            <%= link_to 'Roster', members_path, class: 'nav-link one' %>
           </li>
           <li class="nav-item <%= active_class(profile_page_index_path) %>">
-            <%= link_to 'My Profile', profile_page_index_path, class: 'nav-link' %>
+            <%= link_to 'My Profile', profile_page_index_path, class: 'nav-link profile-nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link signout-nav-link' %>
           </li>
 
-          <% if user_signed_in? %>
-            <li class="nav-item">
-            </li>
-            <li class="nav-item">
-            </li>
-          <% end %>
         </ul>
-
-
-        <ul class="navbar-nav">
-          <% if current_user %>
-            <li class="nav-item">
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-        </ul>
-
-
   <% end %>
 
       </div>
     </nav>
+
+    
 
     <% if controller_name == 'pages' and !user_signed_in? %>
 
@@ -92,11 +79,12 @@
               </li>
               <li class="nav-item">
               </li>
-              <li class="nav-item <%= active_class(new_user_session_path) %>">
-                <%= link_to 'Sign in', new_user_session_path, class: 'landing-nav' %>
-              </li>
+
               <li class="nav-item <%= active_class(new_user_registration_path) %>">
                 <%= link_to 'Sign up', new_user_registration_path , class: 'landing-nav' %>
+              </li>
+              <li class="nav-item <%= active_class(new_user_session_path) %>">
+                <%= link_to 'Sign in', new_user_session_path, class: 'landing-nav' %>
               </li>
 
           </div>
